@@ -1,0 +1,38 @@
+\contentsline {section}{\numberline {1}Startet die Datenträgerverwaltung als Administrator}{1}{section.1}%
+\contentsline {section}{\numberline {2}Steckt zusätzlich einen USB-Stick ans Gerät an.}{1}{section.2}%
+\contentsline {section}{\numberline {3}Welche Bedeutung haben die Laufwerksbuchstaben unter Windows?}{1}{section.3}%
+\contentsline {section}{\numberline {4}Legt eine Textdatei am USB-Stick an. Welche Eigenschaften hat eine Datei?}{2}{section.4}%
+\contentsline {section}{\numberline {5}Was leistet (welche Aufgabe hat) ein Dateisystem?}{2}{section.5}%
+\contentsline {section}{\numberline {6}Welche Datenträger findet Ihr auf Eurem System vor?}{3}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Wie groß sind die beiden Medien (Festplatten)?}{3}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Wei viele Partitionen befinden sich auf den einzelnen Medien?}{3}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Welche Art von Dateisystemen findet Ihr auf Euren Festplatten vor?}{3}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Recherchiert bei Wikipedia Unterschiede zwischen NTFS und FAT32}{4}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Wo liegen die Unterschiede?}{4}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Was haben beide (alle modernen Dateisystem) gemein?}{4}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Welche Vorteile hat ein FAT32.Dateisystem (Verwendung auf anderen OS)?}{4}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Legt mit "Aktion / virutelle Festplatte erstellen" eine virtuelle Festplatte mit 50MB unter C: an.}{5}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Initialisiert den Datenträger mit "DatenträgerXXX / rechte Maustaste / initialisieren".}{5}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Was passiert dabei?}{6}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Legt auf der Platte ein Volumen mit FAT32 Dateisystem, eigenem Namen und Laufwerksbuchstaben an. Formatiert den Datenträger!}{7}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Was ist der Unterschied zwischen Schnellformatierung: ja/nein?}{7}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Warum nennt man die Festplatte "virtuell"?}{8}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Wie groß ist die Disk auf der Festplatte? Versucht die Datei zu löschen!}{8}{subsection.8.6}%
+\contentsline {section}{\numberline {9}Öffnet das Volumen im Explorer und legt im neuen Dateisystem eine Textdatei DeinName.txt an.}{9}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Schreibt mit einem Editor Euren Namen in die Datei und speichert diese.}{9}{subsection.9.1}%
+\contentsline {section}{\numberline {10}Schaut Euch die Eigenschaften der Datei an:}{9}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Wie groß ist die Datei?}{9}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Wie viel Platz benötigt sie am Datenträger tatsächlich (Brutto)?}{9}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Welche weiteren Eigenschaften der Datei findet Ihr bei den Eigenschaften?}{10}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Kopiert die Datei auf Eure Festplatte unter Dokumente (hoffentlich ein NTFS-Dateisystem).}{11}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Wie schauen die Eigenschaften der Datei nun aus?}{11}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Welche Unterschiede gibt es? Welcher Reiter kommt bei einem NTFS-Dateisystem noch dazu?}{11}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Wie viel Speicherplatz belegt die Datei tatsächlich auf der Festplatte?}{11}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Startet Euer Ubuntu mint in der Virtualisierung.}{12}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Steckt den USB-Stick ernaeut an und wählt bei der Frage des VM-Ware-Players ob der USB-Stick unter Windows bzw. unter dem virtuellen Linux verwendet werden soll "Connect to the virtual machine" aus.}{12}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Welche Festplatten "sieht" Linux?}{12}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Welche Dateisysteme kommen hier zum Einsatz? (Menu / Control Center / Disks}{12}{subsection.12.3}%
+\contentsline {section}{\numberline {13}Gibt es unter Linux ebenso Laufwerksbuchstaben?}{13}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Wo finden sich die Dateien am USB-Stick?}{13}{subsection.13.1}%
+\contentsline {section}{\numberline {14}Interpretiert auch die Ausgabe von parted /dev/sda print all}{14}{section.14}%
+\contentsline {section}{\numberline {15}Interpretiert auch die Ausgabe des "Disk Free" Kommando: df -h}{14}{section.15}%

@@ -1,0 +1,38 @@
+\BOOKMARK [1][-]{section.1}{Startet die Datentr\344gerverwaltung als Administrator}{}% 1
+\BOOKMARK [1][-]{section.2}{Steckt zus\344tzlich einen USB-Stick ans Ger\344t an.}{}% 2
+\BOOKMARK [1][-]{section.3}{Welche Bedeutung haben die Laufwerksbuchstaben unter Windows?}{}% 3
+\BOOKMARK [1][-]{section.4}{Legt eine Textdatei am USB-Stick an. Welche Eigenschaften hat eine Datei?}{}% 4
+\BOOKMARK [1][-]{section.5}{Was leistet \(welche Aufgabe hat\) ein Dateisystem?}{}% 5
+\BOOKMARK [1][-]{section.6}{Welche Datentr\344ger findet Ihr auf Eurem System vor?}{}% 6
+\BOOKMARK [2][-]{subsection.6.1}{Wie gro\337 sind die beiden Medien \(Festplatten\)?}{section.6}% 7
+\BOOKMARK [2][-]{subsection.6.2}{Wei viele Partitionen befinden sich auf den einzelnen Medien?}{section.6}% 8
+\BOOKMARK [2][-]{subsection.6.3}{Welche Art von Dateisystemen findet Ihr auf Euren Festplatten vor?}{section.6}% 9
+\BOOKMARK [1][-]{section.7}{Recherchiert bei Wikipedia Unterschiede zwischen NTFS und FAT32}{}% 10
+\BOOKMARK [2][-]{subsection.7.1}{Wo liegen die Unterschiede?}{section.7}% 11
+\BOOKMARK [2][-]{subsection.7.2}{Was haben beide \(alle modernen Dateisystem\) gemein?}{section.7}% 12
+\BOOKMARK [2][-]{subsection.7.3}{Welche Vorteile hat ein FAT32.Dateisystem \(Verwendung auf anderen OS\)?}{section.7}% 13
+\BOOKMARK [1][-]{section.8}{Legt mit "Aktion / virutelle Festplatte erstellen" eine virtuelle Festplatte mit 50MB unter C: an.}{}% 14
+\BOOKMARK [2][-]{subsection.8.1}{Initialisiert den Datentr\344ger mit "Datentr\344gerXXX / rechte Maustaste / initialisieren".}{section.8}% 15
+\BOOKMARK [2][-]{subsection.8.2}{Was passiert dabei?}{section.8}% 16
+\BOOKMARK [2][-]{subsection.8.3}{Legt auf der Platte ein Volumen mit FAT32 Dateisystem, eigenem Namen und Laufwerksbuchstaben an. Formatiert den Datentr\344ger!}{section.8}% 17
+\BOOKMARK [2][-]{subsection.8.4}{Was ist der Unterschied zwischen Schnellformatierung: ja/nein?}{section.8}% 18
+\BOOKMARK [2][-]{subsection.8.5}{Warum nennt man die Festplatte "virtuell"?}{section.8}% 19
+\BOOKMARK [2][-]{subsection.8.6}{Wie gro\337 ist die Disk auf der Festplatte? Versucht die Datei zu l\366schen!}{section.8}% 20
+\BOOKMARK [1][-]{section.9}{\326ffnet das Volumen im Explorer und legt im neuen Dateisystem eine Textdatei DeinName.txt an.}{}% 21
+\BOOKMARK [2][-]{subsection.9.1}{Schreibt mit einem Editor Euren Namen in die Datei und speichert diese.}{section.9}% 22
+\BOOKMARK [1][-]{section.10}{Schaut Euch die Eigenschaften der Datei an:}{}% 23
+\BOOKMARK [2][-]{subsection.10.1}{Wie gro\337 ist die Datei?}{section.10}% 24
+\BOOKMARK [2][-]{subsection.10.2}{Wie viel Platz ben\366tigt sie am Datentr\344ger tats\344chlich \(Brutto\)?}{section.10}% 25
+\BOOKMARK [2][-]{subsection.10.3}{Welche weiteren Eigenschaften der Datei findet Ihr bei den Eigenschaften?}{section.10}% 26
+\BOOKMARK [1][-]{section.11}{Kopiert die Datei auf Eure Festplatte unter Dokumente \(hoffentlich ein NTFS-Dateisystem\).}{}% 27
+\BOOKMARK [2][-]{subsection.11.1}{Wie schauen die Eigenschaften der Datei nun aus?}{section.11}% 28
+\BOOKMARK [2][-]{subsection.11.2}{Welche Unterschiede gibt es? Welcher Reiter kommt bei einem NTFS-Dateisystem noch dazu?}{section.11}% 29
+\BOOKMARK [2][-]{subsection.11.3}{Wie viel Speicherplatz belegt die Datei tats\344chlich auf der Festplatte?}{section.11}% 30
+\BOOKMARK [1][-]{section.12}{Startet Euer Ubuntu mint in der Virtualisierung.}{}% 31
+\BOOKMARK [2][-]{subsection.12.1}{Steckt den USB-Stick ernaeut an und w\344hlt bei der Frage des VM-Ware-Players ob der USB-Stick unter Windows bzw. unter dem virtuellen Linux verwendet werden soll "Connect to the virtual machine" aus.}{section.12}% 32
+\BOOKMARK [2][-]{subsection.12.2}{Welche Festplatten "sieht" Linux?}{section.12}% 33
+\BOOKMARK [2][-]{subsection.12.3}{Welche Dateisysteme kommen hier zum Einsatz? \(Menu / Control Center / Disks}{section.12}% 34
+\BOOKMARK [1][-]{section.13}{Gibt es unter Linux ebenso Laufwerksbuchstaben?}{}% 35
+\BOOKMARK [2][-]{subsection.13.1}{Wo finden sich die Dateien am USB-Stick?}{section.13}% 36
+\BOOKMARK [1][-]{section.14}{Interpretiert auch die Ausgabe von parted /dev/sda print all}{}% 37
+\BOOKMARK [1][-]{section.15}{Interpretiert auch die Ausgabe des "Disk Free" Kommando: df -h}{}% 38

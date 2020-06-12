@@ -1,0 +1,451 @@
+\documentclass{article}
+
+%\usepackage[utf8]{inputenc}%\usepackage{tikz}#
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{pgfplots} % Fuer Plots
+\usepackage{pgfplotstable}
+\usepackage{pgfkeys} 
+\usepackage{filecontents}
+\pgfplotsset{compat = newest}
+\usepackage{tikz} % Generell gutes Packet
+\usepackage{csvsimple} % Zum CSV auslesen
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{geometry}
+\geometry{left=20mm, right=20mm, bottom=20mm}
+
+
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\titleclass{\subsubsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsubsection}[subsubsubsection]
+\renewcommand\thesubsubsubsubsection{\thesubsubsubsection.\arabic{subsubsubsubsection}}
+\titleformat{\subsubsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@subsubsubsubsection{\@dottedtocline{5}{8em}{5em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\title{AAB04: Datenträger, Dateisysteme, Dateien unter Windows und Linux}
+\author{Fabio~Plunser\\Betreuer~:~Walter~Mueller}
+\date{\today}
+\rhead{4BHEL \hspace{5px}\includegraphics[scale=0.09]{Bilder/logo.png}}
+\lhead{AAB04: Datenträger}
+\rfoot{Page~\thepage ~of~\pageref{LastPage}}
+\lfoot{Gruppe~H}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+	\maketitle
+\end{titlepage}
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand\contentsname{Inhaltsverzeichnis}
+\tableofcontents	
+\pagenumbering{gobble}
+
+\thispagestyle{empty}
+\renewcommand\listfigurename{Abbildungsverzeichnis}
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+
+\pagebreak
+\section{Startet die Datenträgerverwaltung als Administrator}
+Systemsteuerung/Computerverwaltung/Datenträgerverwaltung
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.3]{Bilder/Datenträgerverwaltung}
+	\caption{Datenträgerverwaltung}
+\end{figure}
+
+
+\section{Steckt zusätzlich einen USB-Stick ans Gerät an.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/ubs-stick1}
+	\caption{USB-Stick}
+\end{figure}
+
+\section{Welche Bedeutung haben die Laufwerksbuchstaben unter Windows?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+In den Betriebssytemen MS-DOS und Windows bekommen alle Laufwerke und Partitionen eines Computers einen Laufwerksbuchstaben, gefolgt von einem Doppelpunkt. Über diesen Laufwerksbuchstaben können verschiedene Laufwerke unterschieden und angesprochen werden.\\
+Die \textbf{erste Festplatte ist grundsätzlich C:}, weiter Laufwerke (CD-/DVD- oder Netzlaufwerke) werden standardmäßig mit den weitern Buchstaben des Alphabetz gekennzeichnet. Diese Reihenfolge kann teilweise frei festgelegt werden.
+\end{tcolorbox}
+
+
+%#########################################################################################################################
+%-------------------------------------------------------------------------------------------------------------------------
+%#########################################################################################################################
+
+
+\pagebreak
+\section{Legt eine Textdatei am USB-Stick an. Welche Eigenschaften hat eine Datei?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/textdatei}
+	\caption{Textdatei}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/textdatei-Eigenschaften}
+	\caption{Textdatei-Eigenschaften}
+\end{figure}
+
+\section{Was leistet (welche Aufgabe hat) ein Dateisystem?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Das Dateisystem (englisch file system oder filesystem) ist eine Ablageorganisation auf einem Datenträger eines Computers. Dateien können gespeichert, gelesen, verändert oder gelöscht werden. Für den Nutzer müssen Dateiname und computerinterne Dateiadressen in Einklang gebracht werden. Das leichte Wiederfinden und das sichere Abspeichern sind wesentliche Aufgaben eines Dateisystems. Das Ordnungs- und Zugriffssystem berücksichtigt die Geräteeigenschaften und ist elementarer Bestandteil eines Betriebssystems. \\(Quelle: Wikipedia)
+\\
+\\
+Bedeutet das Dateisystem eines Computers sorgt hauptsächlich für die Übersetzung der internen Adressen zu Namen/Ordner/Pfade die der Benutzer versteht und verwenden kann. 
+\end{tcolorbox}
+
+
+%#########################################################################################################################
+%-------------------------------------------------------------------------------------------------------------------------
+%#########################################################################################################################
+
+\pagebreak
+\section{Welche Datenträger findet Ihr auf Eurem System vor?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Ein Paar: \\
+CD: Mein Handy ist angeschlossen und darauf befindet sich eine EXE die ein Sync Programm installliert\\
+Datenträger 0: C: Platte\\
+Datenträger 2: D: Dort sind alle Spiele die groß sind und die ich nicht oft spiele. Ich habe aber seit Jahren keine Ahnung Warum dort 100MB nicht zugeordnet sind vl. sind das 100MB chache die das System dort gefunden hat.\\
+Datenträger 3: E: Rest: Dort ist momentan das Backup meines NAS oben weil die NAS Festplatte kaputt gegangen ist. 2TB Festplatte einfach weg :(\\
+Datenträger 4: H: SSD aus meinem alten Laptop, Häufig gespielte Spiele\\
+Datenträger 5: G: SSD2 alte SSD meines PCs. weiter Spiele\\
+Datenträger 6: F: Alles was ich nicht auf SSDs haben will und auch nicht auf dem Spiele drive\\
+Datenträger 7: Micro-SD Adapter\\
+Datenträger 8: UBS-Stick\\\\
+
+Alle Festplatten sind NTFS (USB-Stick FAT32), und dadurch, dass alle 1TB festplatten nicht genau die gleiche größe haben kann ich sie per Software nicht in ein RAID zusammenschließen.\\\
+
+(Frage an Leher: Was halten sie von den neuen 16TB festplatten? Ist es wirklich klug solch große Festplatten zu benutzten? , gleich wie bei den neuen MacBooks mit 4TB SSD speicher. Wenn diese Platten kaputt werden sind wahrscheinlich die meisten Daten weg außer man lässt sie mit hohem Geldaufwand wiederherstellen. Ebenfalls bei MacBook kann man diese nicht richtig herstellen lassen durch den T2 Secrurity Chip der alle Daten der SSD verschlüsselt. Der Schlüssel ist bei jedem Laptop anders und Apple selbst sagt sie können diesen nicht entschlüsseln und die Festplatte nicht wiederherstellen.) 
+\end{tcolorbox}
+
+
+\subsection{Wie groß sind die beiden Medien (Festplatten)?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Welche beiden Medien?\\
+Also der USB-Stick hat eine RAW Kapazität von ca. 4GB (auch nicht ganz wegen Firmware) und durch formatierung 3.75GB. 
+Die C Platte hat eine RAW Kapazität von 500GB durch Formatierung etc. 465.76GB
+\end{tcolorbox}
+\subsection{Wei viele Partitionen befinden sich auf den einzelnen Medien?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Eine einzige.
+\end{tcolorbox}
+\subsection{Welche Art von Dateisystemen findet Ihr auf Euren Festplatten vor?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+NTFS\\
+USB-Stick FAT32
+\end{tcolorbox}
+
+
+%#########################################################################################################################
+%-------------------------------------------------------------------------------------------------------------------------
+%#########################################################################################################################
+
+
+\pagebreak
+\section{Recherchiert bei Wikipedia Unterschiede zwischen NTFS und FAT32}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+FAT32 ist von eine Weiterentwicklung von dem Dateisystem FAT (File Allocation Table) das Microsoft ende der 70er Jahre eingeführt hat.\\
+NTFS (New  Technology File System) wurde entwickelt, um den Anforderungen moderner Computer gerecht zu werden.
+\end{tcolorbox}
+\subsection{Wo liegen die Unterschiede?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+FAT32- 32-Bit-Dateizuordnungstabelle. 
+Das FAT32-Dateisystem konnte die Anforderungen moderner Computersysteme nicht erfüllen, eignet sich jedoch hervorragend für Speichergeräte wie Flash-Laufwerke, USB-Sticks usw. Es kann eine Dateigröße von bis zu 4 GB bieten. Aufgrund seiner moderaten architektonischen Struktur wird das FAT32 über die CD hinaus in Computern implementiert. Es wird von Spielekonsolen, DVD-Playern, HDTVs und anderen Geräten mit USB-Anschluss akzeptiert
+\end{tcolorbox}
+\subsection{Was haben beide (alle modernen Dateisystem) gemein?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Mit der Entwicklung dieser Technologie wurde eine Handvoll Upgrades eingeführt und hinzugefügt. Einige der Zusätze sind symbolische NTFS-Links, schrumpfende Partitionen und Selbstheilung. Es gab Vorstellungen über NTFS Dateisystem, dass es eine Dateigröße von 16EB-1KB anbieten kann. Jetzt wird das praktische Limit von NTFS als 256 TB-1 KB bezeichnet.\\
+
+Das NTFS-Dateisystem ist eine erweiterte Systemarchitektur. Es führt ein Journal aller gespeicherten Dateien und verfolgt die möglichen Änderungen im Dateisystem. Sehen wir uns einige Parameter dieses Dateisystems an.
+\end{tcolorbox}
+\subsection{Welche Vorteile hat ein FAT32.Dateisystem (Verwendung auf anderen OS)?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+FAT32 ist mit fast allen Betriebssystemen kompatibel. Weiterhin benutzen fast alle "Hot Swapping" Geräte (USB/Sd-Karten) FAT32. Die maxmimale Dateigrlße bei FAT32 beträgt nur 4GB. Dies macht das FAT-Dateisystem für die meisten heutigen PCs unbrauchbar.
+\end{tcolorbox}
+
+
+%#########################################################################################################################
+%-------------------------------------------------------------------------------------------------------------------------
+%#########################################################################################################################
+
+
+
+\pagebreak
+\section{Legt mit "Aktion / virutelle Festplatte erstellen" eine virtuelle Festplatte mit 50MB unter C: an.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/VHD-erstellen}
+	\caption{VHD-erstellen}
+\end{figure}
+\subsection{Initialisiert den Datenträger mit "DatenträgerXXX / rechte Maustaste / initialisieren".}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=1]{Bilder/Datenträgerinitialisierung}
+	\caption{Datenträgerinitialisierung}
+\end{figure}
+
+
+%#########################################################################################################################
+%-------------------------------------------------------------------------------------------------------------------------
+%#########################################################################################################################
+
+\pagebreak
+\subsection{Was passiert dabei?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=1]{Bilder/Datenträgerinitialisierung2}
+	\caption{Datenträgerinitialisierung2}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Das "Virtual Hard Disk" File  "Test.vhd" (im Container-Dateiformat) wir din eine Master Boot Record oder in eine GUID-Paritionstabelle umgewandelt. Und somit der LDM "Logical Disk Manager" drauf zugreifen kann.\\\\
+
+MBR = ist ein Teil des BIOS und ein Format von Partitionstabellen auf Festplatten und unterstützt nur Festplatten die unter 2TB groß sind.\\\\
+GPT = ist eine Teil des UEFI-Standards und ein Format von Partitionstabellen auf Festplatten hat damit seit 2000 zunehmend MBR ersetzt. GPT unterstützt Festplatten mit mehr als 2TB
+\end{tcolorbox}
+
+%#########################################################################################################################
+%-------------------------------------------------------------------------------------------------------------------------
+%#########################################################################################################################
+
+\pagebreak
+\subsection{Legt auf der Platte ein Volumen mit FAT32 Dateisystem, eigenem Namen und Laufwerksbuchstaben an. Formatiert den Datenträger!}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/vhd-volumen2}
+	\caption{VHD-Volumen-Anlegen}
+\end{figure}
+\subsection{Was ist der Unterschied zwischen Schnellformatierung: ja/nein?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Mit der normalen Formatierung der Festplatte, bzw. Datenträgers wird das Dateisystem neu beschrieben, was zu einer bedingten Löschung der Dateien führt. Zudem werden die Sektoren auf fehlerhafte Sektoren geprüft.\\\\
+Die Formatierung löscht die Daten jedoch nicht vollständig. Sie kann mit einer Vielzahl von Software wiederhergestellt werden, unabhängig davon, ob es sich um ein Schnellformat, oder eine normale Formatierung handelt.
+
+
+Bei der Schnellformatierung werden alle Dateien vom Datenträger entfernt, der Datenträger wird jedoch nicht auf fehlerhafte Sektoren überprüft. Diese Option sollte man nur dann verwenden, wenn die Festplatte (Datenträger) zuvor normal formatiert wurde und Sie sich sicher sind, dass der Datenträger nicht beschädigt ist.\\
+
+Eine Formatierung führt aber nicht zum 100\%-tigem Löschen der Daten, diese können mit diverser Software wiederhergestellt werden, egal, ob es eine Schnellformatierung, oder normale Formatierung war.
+\end{tcolorbox}
+
+
+%#########################################################################################################################
+%-------------------------------------------------------------------------------------------------------------------------
+%#########################################################################################################################
+
+\pagebreak
+\subsection{Warum nennt man die Festplatte "virtuell"?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Da es keine physische Festplatte ist auf der ein Dateisystem erstellt wird sondern eine Digitale/virtuelle datei auf einem bereits bestehenden Dateisystem und Festplatte nennt man diese eine virtuelle Festplatte.
+\end{tcolorbox}
+
+\subsection{Wie groß ist die Disk auf der Festplatte? Versucht die Datei zu löschen!}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/vhd-details}
+	\caption{VHD-File-Eigenschaften}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Die Datei ist genau 50MB groß, genau so groß wie vorher eingestellt.
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/vhd-fehler}
+	\caption{VHD-File-Löschen}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Das File kann nicht mehr gelöscht werden auch wenn es virtuell ist es ist durch die Initialisierung jetzt ein teil des Systems und kann dadurch nicht gelöscht werden.
+\end{tcolorbox}
+
+%#########################################################################################################################
+%-------------------------------------------------------------------------------------------------------------------------
+%#########################################################################################################################
+
+\pagebreak
+\section{Öffnet das Volumen im Explorer und legt im neuen Dateisystem eine Textdatei DeinName.txt an.}
+\subsection{Schreibt mit einem Editor Euren Namen in die Datei und speichert diese.}
+
+
+\section{Schaut Euch die Eigenschaften der Datei an:}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/FabioPlunser-Eigenschaften2}
+	\caption{Txt-File-Eigenschaften}
+\end{figure}
+\subsection{Wie groß ist die Datei?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+14 Bytes
+\end{tcolorbox}
+\subsection{Wie viel Platz benötigt sie am Datenträger tatsächlich (Brutto)?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+512-Bytes
+\end{tcolorbox}
+\subsection{Welche weiteren Eigenschaften der Datei findet Ihr bei den Eigenschaften?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+\begin{itemize}
+\item Pfag / wo die Datei liegt
+\item Erstellungsdatum
+\item Datum wann die Datei zuletzt geänder wurde
+\item Datum wann zuletzt auf die Datei zugegriffen wurde
+\item ob die Datei Schreibgeschützt (read only) und/oder versteckt ist
+\end{itemize}
+\end{tcolorbox}
+
+
+%#########################################################################################################################
+%-------------------------------------------------------------------------------------------------------------------------
+%#########################################################################################################################
+
+
+\pagebreak
+\section{Kopiert die Datei auf Eure Festplatte unter Dokumente (hoffentlich ein NTFS-Dateisystem).}
+\subsection{Wie schauen die Eigenschaften der Datei nun aus?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/FabioPlunser-NTFSEigenschaften}
+	\caption{Txt-File-NTFS-Eigenschaften}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Das File ist immer noch gleich groß jedoch verwendet es anscheinend nichts auf dem Dateisystem/Festplatte.\\
+Ich kann mir vorstellen das im NTFS System die Datei auf einige Bit komprimiert wurde.
+\end{tcolorbox}
+
+\subsection{Welche Unterschiede gibt es? Welcher Reiter kommt bei einem NTFS-Dateisystem noch dazu?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Die Datei verwendet anscheinend keinen Speicher auf dem Dateisystem.\\
+Der Reiter Sicherheit ist dazugekommen. Dort kann man einstellen wer was für einen Zugriff auf die Datei hat. 
+\end{tcolorbox}
+\subsection{Wie viel Speicherplatz belegt die Datei tatsächlich auf der Festplatte?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/Fabio-Plunser-Größe2}
+	\caption{Txt-File-NTFS-Wirkliche-Größe}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Anscheinend 1KB ich habe leider keine bessere Möglichkeit gefunden dies anzuzeigen.
+\end{tcolorbox}
+
+
+
+\pagebreak
+\section{Startet Euer Ubuntu mint in der Virtualisierung.}
+\subsection{Steckt den USB-Stick ernaeut an und wählt bei der Frage des VM-Ware-Players ob der USB-Stick unter Windows bzw. unter dem virtuellen Linux verwendet werden soll "Connect to the virtual machine" aus.}
+\subsection{Welche Festplatten "sieht" Linux?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.4]{Bilder/Linux1}
+	\caption{Festplatten-Linux}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Wie ist diese Frage gemeint? 
+\end{tcolorbox}
+\subsection{Welche Dateisysteme kommen hier zum Einsatz? (Menu / Control Center / Disks}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Für die Systemfestplatte Ext4.\\
+USB-Stick FAT32
+\end{tcolorbox}
+
+
+
+
+\pagebreak
+\section{Gibt es unter Linux ebenso Laufwerksbuchstaben?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Nein es gibt verzeichnisse /dev/sda1 für die Erste Festplatte dann /dev/sdb1 /dev/sdc1......
+\end{tcolorbox}
+\subsection{Wo finden sich die Dateien am USB-Stick?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+/media/Fabio/USB DISK/FSST.txt
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/Linux2}
+	\caption{USB-"Speicherplatz"}
+\end{figure}
+
+
+
+
+\pagebreak
+\section{Interpretiert auch die Ausgabe von parted /dev/sda print all}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/Linux3}
+	\caption{/dev/sda print all}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Das Kommando ist in einer shell mit root Rechten auszuführen (sudo -i)\\\\
+Trotz sudo -i "permission denied"
+\end{tcolorbox}
+
+
+
+\section{Interpretiert auch die Ausgabe des "Disk Free" Kommando: df -h}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/Linux4}
+	\caption{df -h}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Zeigt alle Dateisysteme auf dem Betriebssystem an. Und auch die Größe.
+\end{tcolorbox}
+
+
+
+
+
+
+\end{document}
