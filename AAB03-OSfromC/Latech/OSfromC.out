@@ -1,0 +1,48 @@
+\BOOKMARK [1][-]{section.1}{Installiert den mingw-w64 Compile unter c:Programme und \366ffnet mit den script mingw-w64.bat eine CMD Box, die den Pfad bereits um den 64-Bit-Compiler erweitert hat}{}% 1
+\BOOKMARK [1][-]{section.2}{\334bersetzt das Programm mit dem gcc Compiler.}{}% 2
+\BOOKMARK [1][-]{section.3}{Startet das erzeugte Programm in der CMD Box.}{}% 3
+\BOOKMARK [1][-]{section.4}{Reserviert mit dem c Kommando des Programms \(calloc\) ein Gigabyte Speicher.}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Wie geht das?}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Von welcher Adresse bis zu welcher Adresse liegt der Speicherbereich?}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Kontrolliere die Gr\366\337e mit einem Hex-Rechner}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{Dokumentiert das Verhalten im Ressourcenmonitor.}{section.4}% 8
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Wird der Speicher bereits verwendet?}{subsection.4.4}% 9
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Wieviel Speicher ist zugesichert, wie viel in Verwendung?}{subsection.4.4}% 10
+\BOOKMARK [1][-]{section.5}{Belegt zuf\344llige Teile des Speichers mit Daten \(w Befehl\)}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{Was passiert im Ressourcenmonitor \(Arbeitsspeicher\)?}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{F\374lle zuf\344llig weitere Speicherbereiche.}{section.5}% 13
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Was passiert?}{subsection.5.2}% 14
+\BOOKMARK [1][-]{section.6}{Alloziert und beschreibt nun mehr als 4GB Speicher.}{}% 15
+\BOOKMARK [2][-]{subsection.6.1}{W\344re das mit/in einer 32-Bit Anwendung m\366glich?}{section.6}% 16
+\BOOKMARK [1][-]{section.7}{Starte eine weitere Instanz des Programms in der CMD-Box:}{}% 17
+\BOOKMARK [2][-]{subsection.7.1}{Was erkennt man im Ressourcenmonitor?}{section.7}% 18
+\BOOKMARK [2][-]{subsection.7.2}{Wie unterscheiden sich die beiden Prozesse?}{section.7}% 19
+\BOOKMARK [1][-]{section.8}{Belege auch in der zweiten Programminstanz Speicherplatz.}{}% 20
+\BOOKMARK [2][-]{subsection.8.1}{Belege \(allocate\) dort mehrmals 1GByte und beschreibe den Speicher}{section.8}% 21
+\BOOKMARK [2][-]{subsection.8.2}{Welcher Speicherbereich wird nun verwendet \(Anfangs- und Endadressen\)?}{section.8}% 22
+\BOOKMARK [2][-]{subsection.8.3}{\334berschneidet sich der Speicherbereich tats\344chlich mit dem anderen Prozess?}{section.8}% 23
+\BOOKMARK [2][-]{subsection.8.4}{Gib eine Erkl\344rung dazu!}{section.8}% 24
+\BOOKMARK [2][-]{subsection.8.5}{Wie gro\337 ist der Adressraum in einem 32 bit-Betriebssystem?}{section.8}% 25
+\BOOKMARK [2][-]{subsection.8.6}{Wie wird das dem physisch im Rechner eingebauten Memory zugeordnet?}{section.8}% 26
+\BOOKMARK [2][-]{subsection.8.7}{Wie viel Speicher kannst Du mit einem Prozess in Deinem Betriebssystem anfordern.\(der retournierte Pointer buffer ist ungleich 0x00}{section.8}% 27
+\BOOKMARK [1][-]{section.9}{Was passiert wenn der physisch vorhandenen Speicher auf dem Rechner von den Prozessen aufgebraucht wird?}{}% 28
+\BOOKMARK [2][-]{subsection.9.1}{Wie sieht der \334bersichtsbalken im Ressourcenmonitor aus? \(screenshot\)}{section.9}% 29
+\BOOKMARK [2][-]{subsection.9.2}{Was macht die Festplatte? Wie verh\344lt sich der Rechner?}{section.9}% 30
+\BOOKMARK [2][-]{subsection.9.3}{Was passiert, wenn Du zu anderen Anwendungen am Rechner umschaltest?}{section.9}% 31
+\BOOKMARK [1][-]{section.10}{Was passiert, wenn Du eine der beiden Programminstanzen beendest?}{}% 32
+\BOOKMARK [2][-]{subsection.10.1}{Wie sieht die Speicherbelegung im Ressourcenmonitor dann aus?\(screenshot\)}{section.10}% 33
+\BOOKMARK [1][-]{section.11}{Starte das Programm erneut und verwende die Funktion l mit 100 Durchl\344ufen.}{}% 34
+\BOOKMARK [2][-]{subsection.11.1}{Was beobachtest Du im Ressourcenmonitor?\(screenshot\)}{section.11}% 35
+\BOOKMARK [1][-]{section.12}{Verwende die Funktion t \(f\374r mehrere Threads starten\) mit 4 parallelen Threads:}{}% 36
+\BOOKMARK [2][-]{subsection.12.1}{Was beobachtest Du?}{section.12}% 37
+\BOOKMARK [2][-]{subsection.12.2}{Wie sieht das im Ressourcenmonitor aus?}{section.12}% 38
+\BOOKMARK [2][-]{subsection.12.3}{Dokumentiere auch den Verlauf der CPU-Nutzung \(screenshot\)}{section.12}% 39
+\BOOKMARK [1][-]{section.13}{Was passiert, wenn Du 8 Threads oder mehr startest?}{}% 40
+\BOOKMARK [2][-]{subsection.13.1}{Wie verh\344lt sich der Rechner?}{section.13}% 41
+\BOOKMARK [2][-]{subsection.13.2}{Laufen die Threads bei 4 Hyperthreading Kernen tats\344chlich parallel?}{section.13}% 42
+\BOOKMARK [2][-]{subsection.13.3}{Wie wirkt sich das Starten von mehreren Threads auf die Laufzeit eines Threads aus?\(screenshot der CPU-Nutzung\)}{section.13}% 43
+\BOOKMARK [1][-]{section.14}{\334bersetzt das Programm auch in der virtuellen Linux-Mate-Maschine.}{}% 44
+\BOOKMARK [1][-]{section.15}{Spielt Euch auch unter Linux mit dem Programm und beobachtet das Ergebnis mit top und dem Ressourcenmonitor.}{}% 45
+\BOOKMARK [2][-]{subsection.15.1}{K\366nnt Ihr mehr Speicher anfordern, als Ihr der virtuellen Maschine geg\366nnt habt?}{section.15}% 46
+\BOOKMARK [2][-]{subsection.15.2}{Was macht die Ressource Memory und Swap \(unter Resources\)}{section.15}% 47
+\BOOKMARK [2][-]{subsection.15.3}{Was ist und wo liegt der SWAP?}{section.15}% 48

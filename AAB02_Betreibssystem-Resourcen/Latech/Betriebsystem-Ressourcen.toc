@@ -1,0 +1,55 @@
+\contentsline {subsection}{\numberline {0.1}Welche Ressourcen verwaltet ein/das Betriebssystem?}{1}{subsection.0.1}%
+\contentsline {subsection}{\numberline {0.2}Beschreibe den unterschied zwischen Programm / Prozess / Thread}{1}{subsection.0.2}%
+\contentsline {subsection}{\numberline {0.3}Starte ein konkretes Programm unter Windows sowie unter Linux beantworte damit die folgenden Fragen}{1}{subsection.0.3}%
+\contentsline {subsubsection}{\numberline {0.3.1}Welches Programm beobachtest du?}{1}{subsubsection.0.3.1}%
+\contentsline {section}{\numberline {1}Tab CPU (RM)}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Was bedeuten die Spalten?}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}WIN:}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Linux:}{3}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}Welche Ressourcen benötigt das von dir gestartete Programm?}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Win:}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Linux:}{6}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}Welchem Benutzer ist der Prozess zugeordnet? Was bedeutet das fuer den Prozess?}{6}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Win:}{6}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Linux:}{6}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}Welche Betriebssystemressourcen(Handles) verwendet/belegt dein Programm?}{7}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Win:}{7}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Linux:}{7}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Recherchiere im Internet einen Typ von Ressource, der dir noch unbekannt erscheint.}{7}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Tab Memory (RM)}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Wieviel physisches Memory hat dein Computer?}{8}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Win:}{8}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Linux:}{8}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Wieviel RAM ist derzeit auf deinem Computer belegt?}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Win:}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Linux:}{9}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Welches Programm benoetigt den meisten physikalischen Speicher?}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Win:}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Linux:}{9}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Was ist eine MMU, welche Aufgaben hat die MU und wie arbeitet diese mit den Betriebssystem zusammen?}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Was bedeutet virtuelles Memory, was ist eine Auslagerungsdatei?}{9}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Was ist (Memory-)Cache? Wo befindet dieser sich meist?}{10}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Recherchiere für deinen Prozessor wieviel Memory Cache (L1, L2, L3) verfügbar ist.}{10}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Win:}{10}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Linux:}{11}{subsubsection.2.7.2}%
+\contentsline {section}{\numberline {3}Tab Datenträger (RM)}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Welche Prozesse haben die höchste Datentraegeraktivität?}{11}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Win:}{11}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Linux:}{12}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Dokumentiere die Aktivität des von dir gewählten Programms}{12}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Win:}{12}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Linux:}{12}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Kannst du dir die Bedeutung/Verwendung einzelner vom Programm verwendeter Dateien erklären?}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Was könnte das Programm gerade tun?}{13}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Was findest du unter Linux über deine Datenträger heraus?}{13}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Gibt es analoges unter Windows?}{13}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Tab Netzerk (RM):}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Welche Netzwerkaktivitäten finden auf deinem Rechner statt?}{14}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Beschreibe eine TCP-Verbindung des von dir gewählten Programms.}{14}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Beschreibe das bestimmende Quadrupel der TCP-Verbindung(SRC und DST IP, SRC und DST Port)}{15}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Zwischen welchen physischen Rechnern findet die Kommunikation statt?}{15}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Was bedeuten die Spalten Paketverlust und Latenz?}{15}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}Wie viele Pakete über die gesendet oder empfangen wurden, sind verloren gegangen?}{16}{subsubsection.4.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.6}Welche Art von Programme findet Ihr unter Überwachungsports?}{16}{subsubsection.4.1.6}%
+\contentsline {subsubsection}{\numberline {4.1.7}Beschreibt eine Zeile und versucht herauszufinden welcher Dienst dahinter steckt}{17}{subsubsection.4.1.7}%
+\contentsline {subsubsection}{\numberline {4.1.8}Untersuche unter Linux den output von netstat -anp. Was findest dazu heraus?}{17}{subsubsection.4.1.8}%

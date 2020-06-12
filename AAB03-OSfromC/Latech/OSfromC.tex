@@ -1,0 +1,533 @@
+\documentclass{article}
+
+%\usepackage[utf8]{inputenc}%\usepackage{tikz}#
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{pgfplots} % Fuer Plots
+\usepackage{pgfplotstable}
+\usepackage{pgfkeys} 
+\usepackage{filecontents}
+\pgfplotsset{compat = newest}
+\usepackage{tikz} % Generell gutes Packet
+\usepackage{csvsimple} % Zum CSV auslesen
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{geometry}
+\geometry{left=20mm, right=20mm, bottom=20mm}
+
+
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\titleclass{\subsubsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsubsection}[subsubsubsection]
+\renewcommand\thesubsubsubsubsection{\thesubsubsubsection.\arabic{subsubsubsubsection}}
+\titleformat{\subsubsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@subsubsubsubsection{\@dottedtocline{5}{8em}{5em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\title{AAB03: OSfromC}
+\author{Fabio~Plunser\\Betreuer~:~Walter~Mueller}
+\date{\today}
+\rhead{4BHEL \hspace{5px}\includegraphics[scale=0.09]{Bilder/logo.png}}
+\lhead{AAB03: OSfromC}
+\rfoot{Page~\thepage ~of~\pageref{LastPage}}
+\lfoot{Gruppe~H}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+	\maketitle
+\end{titlepage}
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand\contentsname{Inhaltsverzeichnis}
+\tableofcontents	
+\pagenumbering{gobble}
+
+\thispagestyle{empty}
+\renewcommand\listfigurename{Abbildungsverzeichnis}
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+
+\pagebreak
+\section*{AAB02: OSfromC}
+\section{Installiert den mingw-w64 Compile unter c:Programme und öffnet mit den script mingw-w64.bat eine CMD Box, die den Pfad bereits um den 64-Bit-Compiler erweitert hat}  
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Testet ob der richtige Compiler gstartet wird:\\
+gcc --version
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=1]{Bilder/gcc--version.png}
+	\caption{gcc-version}
+\end{figure}
+
+\section{Übersetzt das Programm mit dem gcc Compiler.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+2.	Übersetzt das Programm mit dem gcc Compiler.
+gcc -lpthread –o AAB03-Name.exe AAB03-os.c
+(siehe Folien)
+\end{tcolorbox}
+
+\section{Startet das erzeugte Programm in der CMD Box.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Selektiert das Programm AAB03-Name.exe\\
+CPU:
+\end{tcolorbox}
+
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/CMD-PID}
+	\caption{Programm-Ressourcenmonitor}
+\end{figure}
+
+
+
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+\begin{itemize}
+\item Welche PID hat das Programm?\\
+13060
+\item Wei viele Threads laufen, wie viel CPU benötigt das Programm?\\
+1
+\end{itemize}
+\end{tcolorbox}
+
+\pagebreak
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+\begin{itemize}
+\item Welche Module (Dateien und Bibliotheken) werden vom Programm verwendet?\\
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/Programm-Handles}
+	\caption{Programm-Handles}
+\end{figure}
+
+
+
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+\begin{itemize}
+\item Handelt es sich um eine 32bit oder eine 64bit Anwendung? (Spalten im Tab CPU erweitern)\\
+64-Bit
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Memory:
+\begin{itemize}
+\item Wie viel Speicher wird zugesichert/verwendet?\\
+Esi wird 480kB Zugesichert und 120kB verwendet.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.8]{Bilder/Programm-RAM}
+	\caption{Programm-RAM}
+\end{figure}
+%--------------------------------------------------------------------------------------------------------------------
+%
+%----------------------------------------------------------------------------------------------------------------
+\pagebreak
+\section{Reserviert mit dem c Kommando des Programms (calloc) ein Gigabyte Speicher.}
+\subsection{Wie geht das?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Im Ausgeführten Programm "c 1000" eingeben dies Reserviert dann 1000* 1 MB blöcke im Arbeitsspeicher.
+\end{tcolorbox}
+%###############################################################################################################
+\subsection{Von welcher Adresse bis zu welcher Adresse liegt der Speicherbereich?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/RAM-Reservierung}
+	\caption{Programm-RAM-Reservierung}
+\end{figure}
+%############################################################################################################################
+\subsection{Kontrolliere die Größe mit einem Hex-Rechner}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+$0000000003F0BF040 \rightarrow 1057747008$\\
+$000000000008BF040 \rightarrow 9171008$\\
+$1057747008-9171008 = 1048576000$\\
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/byte-gb}
+	\caption{Byte in GB}
+\end{figure}
+%##########################################################################################################################
+\subsection{Dokumentiert das Verhalten im Ressourcenmonitor.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/RAM-Reservierung-RM}
+	\caption{RAM-Reservierung-RM}
+\end{figure}
+%###########################################################################################################
+\subsubsection{Wird der Speicher bereits verwendet?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Nein der Speicher wird nicht verwendet. 
+\end{tcolorbox}
+%##########################################################################################################
+\subsubsection{Wieviel Speicher ist zugesichert, wie viel in Verwendung?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Ca. 1 GB ist zugesichert und wes werden ca. 1 MB verwendet
+\end{tcolorbox}
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Belegt zufällige Teile des Speichers mit Daten (w Befehl)}
+\subsection{Was passiert im Ressourcenmonitor (Arbeitsspeicher)?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/Programm-w-1000}
+	\caption{W-1000}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Das Programm verwendet jetzt ca. 600MB Memory.
+\end{tcolorbox}
+%##################################################################################################################
+\subsection{Fülle zufällig weitere Speicherbereiche.}
+\subsubsection{Was passiert?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/Programm-zufaellig}
+	\caption{W-4*1000}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Es wurde noch 4 mal w 1000 ausgeführt. Es wird einfach der verwendete Speicher and den zugewiesenen Speicher angenährt. Bei jeder Ausführung wird weniger Memory verwendet. 
+\end{tcolorbox}
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Alloziert und beschreibt nun mehr als 4GB Speicher.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/RAM-4-Reservierung}
+	\caption{4.5GB-Rservierung}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Es wird durch den Befehl c 4500 ca. 4.5GB reserviert
+\end{tcolorbox}
+
+\pagebreak
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.7]{Bilder/4-RAM-verwendet}
+	\caption{4.5GB-Verwendung}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Nach der Durchführung des Befehls w 4500 wird nur 0.5GB verwendet. Es kann sein dass das Programm einfach keine freien RAM Plätze mehr findet da mein PC nur 4GB RAM besitzt.
+\end{tcolorbox}
+\subsection{Wäre das mit/in einer 32-Bit Anwendung möglich?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Nein ein 32-Bit Anwendung kann maximal 4GB verwenden und nicht mehr.
+\end{tcolorbox}
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Starte eine weitere Instanz des Programms in der CMD-Box:}
+\subsection{Was erkennt man im Ressourcenmonitor?}
+\subsection{Wie unterscheiden sich die beiden Prozesse?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/2-Instanzen}
+	\caption{2-Instanzen}
+\end{figure}
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Belege auch in der zweiten Programminstanz Speicherplatz.}
+\subsection{Belege (allocate) dort mehrmals 1GByte und beschreibe den Speicher}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/2-Instanzen-RAM}
+	\caption{2-Instanzen-RAM-Verwendung}
+\end{figure}
+\pagebreak
+%##################################################################################################
+\subsection{Welcher Speicherbereich wird nun verwendet (Anfangs- und Endadressen)?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/2-Instanzen-Speicherraum-1}
+	\caption{2-Instanzen-Speicherraum-1}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Von: $7FFE040 \rightarrow \underline{2147475520}$ \\
+Bis: $179FFE040 \rightarrow \underline{6341779520}$\\
+Ergibt: $4194304000$Byte $\rightarrow 4,19$GB 
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/2-Instanzen-Speicherraum-2}
+	\caption{2-Instanzen-Speicherraum-2}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Von: $1FC65040 \rightarrow \underline{533090368}$ \\
+Bis: $5E465040 \rightarrow \underline{1581666368}$\\
+Ergibt: $1.048.576.000$Byte $\rightarrow 1,04$GB 
+\end{tcolorbox}
+\subsection{Überschneidet sich der Speicherbereich tatsächlich mit dem anderen Prozess?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Keine ahnung
+\end{tcolorbox}
+\subsection{Gib eine Erklärung dazu!}
+\subsection{Wie groß ist der Adressraum in einem 32 bit-Betriebssystem?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+ja 4GB  = $4*10^9$ Bytes
+\end{tcolorbox}
+\subsection{Wie wird das dem physisch im Rechner eingebauten Memory zugeordnet?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Durch die MMU (Memory Management Unit) ist dafür zuständig dass der logische Adressraum ohne Überscheidungen in den Physischen übernommen wird.
+\end{tcolorbox}
+
+
+
+
+\pagebreak
+\subsection{Wie viel Speicher kannst Du mit einem Prozess in Deinem Betriebssystem  anfordern.(der retournierte Pointer buffer ist ungleich 0x00}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/maximalspeicher}
+	\caption{Maximal-reservierbarer-Speicher}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Es können maximal 12GB reserviert werden. 
+\end{tcolorbox}
+
+%-------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------------
+
+
+\pagebreak
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Was passiert wenn der physisch vorhandenen Speicher auf dem Rechner von den Prozessen aufgebraucht wird?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Es kann kein logischer Speicher mehr übernommen werden. Somit schreiben die meisten Programme die diesen physischen Speicher wirklich brauchen eine Fehlermeldung, dass das System zu wenig Speicher besitzt.
+\end{tcolorbox}
+\subsection{Wie sieht der Übersichtsbalken im Ressourcenmonitor aus? (screenshot)}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/RAM-Balken}
+	\caption{Arbeitsspeicher-Übersichtsbalken}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Da mein Surface nur 4GB physischen RAM besitzt und ich versuche 12GB zu beschreiben werden nur 2 GB beschrieben und der Physische RAM somit steigt der grüne Balken "in Verwendung" ich habe aber auch beobachtet das anderen Programmen RAM entzogen wurde.
+\end{tcolorbox}
+\subsection{Was macht die Festplatte? Wie verhält sich der Rechner?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/Datenträger-bei-beschreibung}
+	\caption{Datenträger-bei-beschreibung}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Während der Beschreibung der Daten war die Festplatte kurz ausgelastet. 
+\end{tcolorbox}
+
+
+\pagebreak
+
+
+\subsection{Was passiert, wenn Du zu anderen Anwendungen am Rechner umschaltest?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Der verwendete Arbeitsspeicher ändert sich kaum. 
+\end{tcolorbox}
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Was passiert, wenn Du eine der beiden Programminstanzen beendest?}
+\subsection{Wie sieht die Speicherbelegung im Ressourcenmonitor dann aus?(screenshot)}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/speicher-nach-beendung}
+	\caption{Speicher-nach-Prozess-Beendung}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/speicher-nach-beendung2}
+	\caption{Speicher-nach-Prozess-Beendung}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Der vorher belegte Speicher wird nicht mehr belegt. Somit wird auch weniger RAM verwendet. 
+\end{tcolorbox}
+
+
+
+\pagebreak
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Starte das Programm erneut und verwende die Funktion l mit 100 Durchläufen.}
+\subsection{Was beobachtest Du im Ressourcenmonitor?(screenshot)}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/l-100-1}
+	\caption{l-100-1}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Es hat sich nur die Gesamtauslastung der CPU verändert, vorallem versucht die CPU durchgehend ihre maximal Frequenz zu erreichen obwohl die Auslastung dafür zu gering ist. Also könnte die CPU eigentlich um Strom zu sparen die Frequenz verringern.  
+\end{tcolorbox}
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Verwende die Funktion t (für mehrere Threads starten) mit 4 parallelen Threads:}
+\subsection{Was beobachtest Du?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+für eine Kurze Zeit wird die CPU zu 100\% ausgelastet und der Prozess verwendet 5 Threads. 
+\end{tcolorbox}
+\subsection{Wie sieht das im Ressourcenmonitor aus?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/4-Threads}
+	\caption{4-Threads-Auslastung}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/4-Threads-1}
+	\caption{4-Threads-Prozess}
+\end{figure}
+\subsection{Dokumentiere auch den Verlauf der CPU-Nutzung (screenshot)}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+siehe 12.2
+\end{tcolorbox}
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Was passiert, wenn Du 8 Threads oder mehr startest?}
+\subsection{Wie verhält sich der Rechner?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/8-Threads-1}
+	\caption{8-Threads-Auslastung}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/8-Threads}
+	\caption{8-Threads-Prozess}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Der Rechner wird nicht langsamer und andere Programme, scheinen kaum davon beeinflusst zu sein. Nur z.b Video schauen auf Youtube hakt ein bischen. 
+\end{tcolorbox}
+\subsection{Laufen die Threads bei 4 Hyperthreading Kernen tatsächlich parallel?}
+Ja. Hyperthreading sorgt dafür dass sich Threads Ressourcen teilen, die normalerweise ein CPU Kern berechnen müsste.
+Somit kann ein Thread die Ressourcen verwenden die ein anderer momentan nicht benötigt.
+\subsection{Wie wirkt sich das Starten von mehreren Threads auf die Laufzeit eines Threads aus?(screenshot der CPU-Nutzung)}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/8-Threads-1}
+	\caption{8-Threads-Auslastung}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Die Laufzeit ist länger. 
+\end{tcolorbox}
+
+
+
+
+\pagebreak
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Übersetzt das Programm auch in der virtuellen Linux-Mate-Maschine.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Vorsicht: Hier lautet der gcc Aufruf weil folgt: (Libraries nach dem C-File anfügen)
+gcc –o AAB03-walter AAB03-OSfromC.c –lpthread –lm
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/Linux1}
+	\caption{Linux-Programm-Übersetzung}
+\end{figure}
+%-------------------------------------------------------------------------------------------------------------------------
+%
+%--------------------------------------------------------------------------------------------------------------------
+\section{Spielt Euch auch unter Linux mit dem Programm und beobachtet das Ergebnis mit top und dem Ressourcenmonitor.}
+\subsection{Könnt Ihr mehr Speicher anfordern, als Ihr der virtuellen Maschine gegönnt habt?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Neine da ich 1GB RAM der VM zugewiesen habe, kann ich maximal nur 700MB reservieren. 
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/Linux2}
+	\caption{Linux-maximal-reservierbarer-Speicher}
+\end{figure}
+
+
+
+\pagebreak
+\subsection{Was macht die Ressource Memory und Swap (unter Resources)}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/Linux3}
+	\caption{Linux-Memory-Swap}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Nach dem Befehl w 1000 wird versucht den gesamten Speicher zu beschreiben dadurch ist der RAM zu 100\% ausgelastet.
+\end{tcolorbox}
+
+\subsection{Was ist und wo liegt der SWAP?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+SWAP ist der Auslagerungsspeicher der nicht nur genutzt wird wenn der RAM kanpp wird. SWAP liegt dadurch auf der Festplatte. Es wird auch innerhalb großer Programme vom Kernel verwendet um Daten die höchstwahrscheinlich nicht gebraucht werden, aber trotzdem vom Programm in den RAM geschrieben werden, auszulagern. Man bekommt davon nichts mit da es Daten sind die nicht benötigt werden.  
+\end{tcolorbox}
+
+
+
+
+\end{document}

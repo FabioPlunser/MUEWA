@@ -1,0 +1,327 @@
+\documentclass{article}
+
+%\usepackage[utf8]{inputenc}%\usepackage{tikz}#
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{pgfplots} % Fuer Plots
+\usepackage{pgfplotstable}
+\usepackage{pgfkeys} 
+\usepackage{filecontents}
+\pgfplotsset{compat = newest}
+\usepackage{tikz} % Generell gutes Packet
+\usepackage{csvsimple} % Zum CSV auslesen
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{geometry}
+\geometry{left=20mm, right=20mm, bottom=20mm}
+
+
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\titleclass{\subsubsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsubsection}[subsubsubsection]
+\renewcommand\thesubsubsubsubsection{\thesubsubsubsection.\arabic{subsubsubsubsection}}
+\titleformat{\subsubsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@subsubsubsubsection{\@dottedtocline{5}{8em}{5em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\title{AAB02: OS Ressourcen unter Windows und Linux im Vergleich}
+\author{Fabio~Plunser\\Betreuer~:~Walter~Mueller}
+\date{\today}
+\rhead{4BHEL \hspace{5px}\includegraphics[scale=0.09]{Bilder/logo.png}}
+\lhead{AAB02: OS Ressourcen unter Windows und Linux im Vergleich}
+\rfoot{Page~\thepage ~of~\pageref{LastPage}}
+\lfoot{Gruppe~H}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+	\maketitle
+\end{titlepage}
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand\contentsname{Inhaltsverzeichnis}
+\tableofcontents	
+\pagenumbering{gobble}
+
+\thispagestyle{empty}
+\renewcommand\listfigurename{Abbildungsverzeichnis}
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+
+\pagebreak
+\section*{AAB02: OS Ressourcen unter Windows und Linux im Vergleich}
+%
+%
+\subsection{Welche Ressourcen verwaltet ein/das Betriebssystem?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Festplattenspeicher, RAM, CPU, GPU, Netzwerk
+\end{tcolorbox}
+%
+%
+\subsection{Beschreibe den unterschied zwischen Programm / Prozess / Thread}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Es gibt zwei verschiedene Arten von Threads.
+\begin{itemize}
+\item Threads im engeren Sinne, die sogenannten Kernel-Threas, laufen ab unter Steuerung durch das Betriebssystem. 
+\item Im Gegensatz dazu stehen die sogenannten User-Threads, die das Computerprogramm des Anwenders komplett selbst verwalten muss. 
+\end{itemize}
+Ein (Kernel-) Thread ist ein sequentieller Abarbeitungslauf innerhalb eines Prozesses und teilt sich mit den anderen vorhanden Threads (multithreading)  des zugehörigen Prozesses eine Reihe von Betriebsmitteln: Jedes ausgeführte Programm ist ein Prozess, der Arbeitsspeicher belegt und bei Bedarf den Prozessor nutzt. Viele Programme wie Chrome brauchen mehrere Prozesse, da jeder Tab einen eigenen Prozess belegt. Jedoch läuft in den meisten Fällen für eine bestimmte Anwendung nur ein Prozess. Es ist egal wie oft Word geöffnet wird alle Word-Instanzen spiegeln sich in einem einzigen Prozess namens "WINDWORD:EXE" wieder.\\\\
+Auch jeder Dienst ist ein Prozess. Im Unterschied zu eine Programm wartet ein Dienst im Hintergrund darauf, dass es benötigt wird, sei es vom Anwender oder von einem anderen Programm. Prozesse, die durch aktive Dienste entstehen, erkennen Sie in der Prozessliste in der Regel am Besitzer "System". Außerdem hat ein Dienst keine Schnittstelle zum Benutzer, kann also nicht direkt mit im Interagieren.\\\\
+In Windws heißen Prozesse Taks deswegen heißt es auch Task-Manager und nicht Prozess-Manager 
+
+\end{tcolorbox}
+%
+%
+\subsection{Starte ein konkretes Programm unter Windows sowie unter Linux beantworte damit die folgenden Fragen}
+%
+%
+\subsubsection{Welches Programm beobachtest du?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+\begin{itemize}
+\item WIN: Firefox
+\item Linux: Standardbrowser
+\end{itemize}
+\end{tcolorbox}
+%
+%
+\pagebreak
+\section{Tab CPU (RM)}
+\subsection{Was bedeuten die Spalten?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/RM-Spalten.png}
+	\caption{RM-Spalten}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Die Spalten sind nochmal genauere Anschaueng der Ressouren
+\end{tcolorbox}
+%
+%
+\subsection{Welche Ressourcen benoetigt das von dir gestartete Programm?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/firefox-CPU.png}
+	\caption{Firefox-CPU}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Firefox benötigt, ohne eine Seite geladen zu haben, 5 Prozesse. Mit insgesamt 152 Threads. 
+\end{tcolorbox}
+%
+%
+\pagebreak
+%
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/firefox-daten.png}
+	\caption{Firefox-Datenträger}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Firefox greift gerade auf diese Verzeichnisse bzw. Dateien zu. Diese ändern sich ständig.
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/firefox-netz.png}
+	\caption{Firefox-Netzwerk}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Da Firefox gerade keine Seite lädt erscheint es in der Netzwerkaktivität nicht auf.
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/firefox-RAM.png}
+	\caption{Firefox-Arbeitssicher}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Firefox benötigt ungefähr einen halben MB RAM. 
+\end{tcolorbox}
+%
+%
+\subsection{Welchem Benutzer ist der Prozess zugeordnet? Was bedeutet das fuer den Prozess?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Dem Standard User des PCs
+\end{tcolorbox}
+%
+%
+\subsection{Welche Betriebssystemressourcen(Handles) verwendet/belegt dein Programm?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+\begin{itemize}
+\item ALPC Port
+\item File
+\item Desktop
+\item Directory
+\item Event
+\item Key
+\item Mutant
+\item Section
+\item Semaphore
+\item WindowStation
+\end{itemize} 
+\end{tcolorbox}
+%
+%
+\subsection{Recherchiere im Internet einen Typ von Ressource, der dir noch unbekannt erscheint.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+ALPC Port: Advanced Local Procedure Call
+The typical communication scenario between the server and the client is as follows:
+
+\begin{itemize}
+\item A server process first creates a named server connection port object, and waits for clients to connect.
+\item A client requests a connection to that named port by sending a connect message.
+\item If the server accepts the connection, two unnamed ports are created:
+client communication port - used by client threads to communicate with a particular server
+server communication port - used by the server to communicate with a particular client; one such port per client is created
+\item The client receives a handle to the client communication port, and server receives a handle to the server communication port, and the inter-process communication channel is established.
+
+\end{itemize}
+\end{tcolorbox}
+%
+%
+%
+%
+%
+%
+\pagebreak
+\section{Tab Memory (RM)}
+\subsection{Wieviel physisches Memory hat dein Computer?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/RAM.png}
+	\caption{Arbeitssicher}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+4GB Ram
+\end{tcolorbox}
+%
+%
+\subsection{Wieviel RAM ist derzeit auf deinem Computer belegt?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+3.5GB
+\end{tcolorbox}
+%
+%
+\subsection{Welches Programm benoetigt den meisten physikalischen Speicher?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Der neue (sehr tolle) Edge Browser von Microsoft.
+\end{tcolorbox}
+%
+%
+\subsection{Was ist eine MMU, welche Aufgaben hat die MU und wie arbeitet diese mit den Betriebssystem zusammen?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Memory Management Unit: Die Verwaltet den Zugriff auf den Arbeitsspeicher. Sie erhält Befehle und schaut ob sie valide sind und führt diese danach aus.
+\end{tcolorbox}
+%
+%
+\subsection{Was bedeutet virtuelles Memory, was ist eine Auslagerungsdatei?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Die \textbf{virtuelle Speicherverwaltung} ist eine spezielle \underline{Peicherverwaltung} in einem \underline{Cmputer}. Der \textbf{virutelle Speicher} bezeichnet den vom tastsächlich vorhanden \underline{Arbeitsspeicher} unabghängigen \underline{Adressraum}, der einem Prozess vom \underline{Betriebssystem} zur Verfügung gestellt wird.\\\\
+Die \textbf{Auslagerungsdatei} bzw. die \textbf{Swap-Partition} eine \underline{Partition} auf einem \underline{Massenspeichermedium} eines \underline{Computers}, die verschiedene \underline{Betriebssysteme} im Rahmen ihrer \underline{Speicherverwaltung} verwenden, um \underline{Prozessen} einen größeren \underline{Adressraum} zur Verfügung stellen zu können als durch den physisch vorhanden \underline{Arbeitsspeicher} eigentlich möglich wäre. 
+\end{tcolorbox}
+%
+%
+\subsection{Was ist (Memory-)Cache? Wo befindet dieser sich meist?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Memory-Cahce ist ein kleiner super schneller Speicher (Puffer) der meistens auf extra Chips auf HDDs und SSDs sitz, oder auch direkt in der CPU. Diese Pufferspeicher der Festplatten sind vorallemfür stetige neuzugriffe auf den gleichen Prozess wichtig, da dann das Programm schneller auf die Anweisungen des Benutzer reagieren kann. Auch für Random Access auf die Datenträger wichtig, oft sind normale HDDs und SSDs zu langsa um solche Zugriffe zu Verwalten, deswegen werden sie im Cache zwischen gespeichert um die Daten danach auf die Festplatten zu schreiben.\\\\
+Der Cache direkt auf der CPU ist hauptsächlich ein Puffer für den RAM. Dieser Cache Puffer ist noch sehr viel schneller wie RAM und ist in den meisten CPUs in 3 verschiedenen Layern vorhanden. 
+\end{tcolorbox}
+%
+%
+%
+%
+%
+%
+\pagebreak
+\section{Tab Datentraeger (RM)}
+\subsection{Welche Prozesse haben die hoechste Datentraegeraktivitaet?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+
+\end{tcolorbox}
+%
+%
+\subsection{Dokumentiere die Aktivitaet des von dir gewaehlten Programms}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+
+\end{tcolorbox}
+%
+%
+\subsection{Kannst du dir die Bedeutung/Verwendung einzelner vom Programm verwendeter Dateien erklaeren?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+
+\end{tcolorbox}
+%
+%
+\subsection{Was koennte das Programm gerade tun?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+
+\end{tcolorbox}
+%
+%
+\subsection{Was findest du unter Linux ueber deine Datentraeger heraus?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+
+\end{tcolorbox}
+%
+%
+\subsection{Gibt es analoges unter Windows?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+
+\end{tcolorbox}
+
+
+
+
+
+
+
+\end{document}
