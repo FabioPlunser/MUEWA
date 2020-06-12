@@ -1,0 +1,304 @@
+\documentclass{article}
+
+%\usepackage[utf8]{inputenc}%\usepackage{tikz}#
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{pgfplots} % Fuer Plots
+\usepackage{pgfplotstable}
+\usepackage{pgfkeys} 
+\usepackage{filecontents}
+\pgfplotsset{compat = newest}
+\usepackage{tikz} % Generell gutes Packet
+\usepackage{csvsimple} % Zum CSV auslesen
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{geometry}
+\geometry{left=20mm, right=20mm, bottom=20mm}
+
+
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\titleclass{\subsubsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsubsection}[subsubsubsection]
+\renewcommand\thesubsubsubsubsection{\thesubsubsubsection.\arabic{subsubsubsubsection}}
+\titleformat{\subsubsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@subsubsubsubsection{\@dottedtocline{5}{8em}{5em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\title{AAB05: Benutzer, Gruppen und rechte unter Windows}
+\author{Fabio~Plunser\\Betreuer~:~Walter~Mueller}
+\date{\today}
+\rhead{4BHEL \hspace{5px}\includegraphics[scale=0.09]{Bilder/logo.png}}
+\lhead{AAB04: Datenträger}
+\rfoot{Page~\thepage ~of~\pageref{LastPage}}
+\lfoot{Gruppe~H}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+	\maketitle
+\end{titlepage}
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand\contentsname{Inhaltsverzeichnis}
+\tableofcontents	
+\pagenumbering{gobble}
+
+\thispagestyle{empty}
+\renewcommand\listfigurename{Abbildungsverzeichnis}
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+
+\pagebreak
+\section{Startet die Benutzerverwaltung als Administrator.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+(Explorer /rechte Maustaste auf "DieserPC" - Verwalten (Win-X) /Computerveraltung / System / lokale Benutzer und Gruppen, nur unter min10 educatioanal bzw. professional) 
+bz. bei Win10Home: Start/Suchen/netplwiz (etwas eingeschränkte Oberfläche) 
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/Benutzerkonten-1}
+	\caption{Computerverwaltung/Lokale-Benutzerkonten}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/Gruppen-1}
+	\caption{Computerverwaltung/Lokale-Gruppen}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Welche Bentuzer gibt es auf Deinem Rechner?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Wie bei $Figure 1$ zusehen gibt es: 
+\begin{itemize}
+\item Administrator
+\item DefaulAccount
+\item Fabio
+\item Gast
+\item WDAGUtillity
+\end{itemize}
+\end{tcolorbox}
+\subsection{Welches Benutzerkonto verwendest du derzeit?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Fabio
+\end{tcolorbox}
+
+
+
+
+\section{Dokumentiere die Eigenschaften deinens Benutzerkontos.}
+\subsection{Läuft dein Kennwort aus?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/Fabi-Eigenschaften-1}
+	\caption{Benutzerkonto-Eigenschaften}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Kennwort läuft nie aus.
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\subsection{Zu welchen Gruppen gehört das Konto?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/Fabi-Eigenschaften-2}
+	\caption{Benutzerkonto-Eigenschaften}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+\begin{itemize}
+\item Administrator
+\item Benutzer
+\item Leistungsprotokollbenutzer
+\end{itemize}
+\end{tcolorbox}
+
+
+\section{Welche Gruppen gitb es auf Deinem Rechner?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/Gruppen-1}
+	\caption{Computerverwaltung/Lokale-Gruppen}
+\end{figure}
+\subsection{Beschreibe den Unterschied  zwischen den Gruppen "Administratoren", und "Benutzer"}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Administrator hat das recht auf alle Daten von allen Benutzern zuzugreifen.\\
+Benutzer haben nur die Rechte auf ihren eigenen Daten. 
+\end{tcolorbox}
+
+
+
+
+\section{Dokumentiere die Berechtigung auf dem Ordner C:/Programme}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+(Im Explorer: Eigenschaften/Sicherheit/Erweitert ....)
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/Programme-Berechtigungen}
+	\caption{c-Programme-Berechtigungen}
+\end{figure}
+\subsection{Welche Rechte besitzt die Gruppe der Administratoren, welche die der Benutzer?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Administrator besitzt Vollzugriff. \\
+Benutzer besitzt Lesen und Ausführen
+\end{tcolorbox}
+\subsection{Dokumentiere deine Erkenntnisse mit screenshot und beschreibe die Rechte mit Worten.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Siehe $Figure6$ und 5.1
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\subsection{Warum funktioniert das nur mit einem NTFS-Dateisystem?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Im Gegensatz zu Inode-basierten Dateisystemen, welche bei Unix zum Einsatz kommen (Konzept: alles ist eine Datei), werden bei NTFS alle Informationen zu Dateien in einer Datei (Konzept: alles ist in einer Datei), der Master File Table, kurz MFT gespeichert. In dieser Datei befinden sich die Einträge, welche Blöcke zu welcher Datei gehören, die Zugriffsberechtigungen und die Attribute. Zu den Eigenschaften (Attributen) einer Datei gehören unter NTFS Dateigröße, Datum der Dateierstellung, Datum der letzten Änderung, Freigabe, Dateityp und auch der eigentliche Dateiinhalt.\\\\
+
+Quelle: Wikipedia
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Beschreibe die Rechte auf deinem Heimatverzeichnis (i.A. C:/USer/me....}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/Homedirectory-Berechtigungen}
+	\caption{Heimverzeichnis-Berechtigungen}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Berechtigung hat meine PC-Konto FabioPlunser, dass mit meiner alten Mail verlinkt ist, das System und jeder in der Gruppe Administrator. FABIO/Administrator $\rightarrow$ FABIO ist der Name des PCs
+\end{tcolorbox}
+
+
+\section{Dokumentiere die effektiven Rechte für den Benutzer Guest auf deinem Heimatverzeichnis.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+(Sicherheit/Erweitert/Effektive Berechtigungen)
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/Gast-1}
+	\caption{Gast-Heimatverzeichnis-Berechtigungen}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Registry:}
+\subsection{Starte den Registry-Editor mit regedit (ggf. als Administrator)}
+\subsection{Welche Rechte hast du auf den Teilbaum HKEY-Current-User und welche auf HKEY-Local-Machine?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/HKEY-Current-User}
+	\caption{HKEY-Current-User-Berechtigungen}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Vollzugriff und Lesen. Mein Konto und die Gruppe Administratoren besitzt diese.
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Bilder/HKEY-Loca-Machine}
+	\caption{HKEY-Loca-Machine-Berechtigungen}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Gruppe Administrator besitzt Vollzugriff und Lesen, somit auch ich. 
+\end{tcolorbox}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{Wie hilft dieses System von Rechten und Berechtigungen die Systemsicherheit auf einem Windowsrechner zu gewährleisten?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Falls es auf meinem PC mehrere Benutzer gäben würde, könnte ich alle Berechtigungen für jede einzelne Datei/Festplatte/Programm genau einstellen.\\
+Da ich der einzige Benutzer dieses PC's bin ist es für mich nur wichtig alle Adminrechte zu haben. 
+\end{tcolorbox}
+
+\subsection{Was kann ein Trojaner oder eine Schadsoftware auf dem Rechner anstellen, wenn du als "normaler" Benutzer arbeitest?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Er kann alle meine Daten beschädigen, stehlen oder verschlüsseln. Jedoch kann er nicht, falls es noch andere Benutzerkonten auf dem Rechner gibt, auf diese Zugriffe, das geht nur wenn ich als Administrator diese Schadsoftware bzw. Torjaner aufrufe/auslöse.
+\end{tcolorbox}
+
+
+\section{MS-Active Directory und MS-Domäne (Internetrecherche):}
+\subsection{Was passiert, wenn man einen Rechner in eine Domain hängt?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Der Rechner ladet zuerst beim hochfahren die lokalen Benutzer und Gruppen einstellungen sobald sich ein Benutzer in der Domäne anmeldet überschreibt die Domäne diese Berechtigungen. Somit können Berechtigungen einmal auf einem Server festgelegt werden und sie werden dann für alle Benutzer in der Domäne übernommen. 
+\end{tcolorbox}
+
+\subsubsection{Warum ist das sinnvoll?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Um z.B. in einer großen Schule oder Firma nicht für jeden PC einzeln die Berechtigungen einstellen zu müssen. Weiterhin hat eine Domände den Vorteil, dass alle Benutzer und ihre Daten auf einem Server liegen somit kann sich dieser Benutzer auf den jeden PC in der Firma anmelden und seine Daten bearbeiten (je nach Netzwerk layout). 
+\end{tcolorbox}
+
+
+
+
+
+\end{document}

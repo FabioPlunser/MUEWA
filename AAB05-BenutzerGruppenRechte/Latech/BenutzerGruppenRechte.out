@@ -1,0 +1,22 @@
+\BOOKMARK [1][-]{section.1}{Startet die Benutzerverwaltung als Administrator.}{}% 1
+\BOOKMARK [1][-]{section.2}{Welche Bentuzer gibt es auf Deinem Rechner?}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Welches Benutzerkonto verwendest du derzeit?}{section.2}% 3
+\BOOKMARK [1][-]{section.3}{Dokumentiere die Eigenschaften deinens Benutzerkontos.}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{L\344uft dein Kennwort aus?}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Zu welchen Gruppen geh\366rt das Konto?}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Welche Gruppen gitb es auf Deinem Rechner?}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Beschreibe den Unterschied zwischen den Gruppen "Administratoren", und "Benutzer"}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Dokumentiere die Berechtigung auf dem Ordner C:/Programme}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{Welche Rechte besitzt die Gruppe der Administratoren, welche die der Benutzer?}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Dokumentiere deine Erkenntnisse mit screenshot und beschreibe die Rechte mit Worten.}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.3}{Warum funktioniert das nur mit einem NTFS-Dateisystem?}{section.5}% 12
+\BOOKMARK [1][-]{section.6}{Beschreibe die Rechte auf deinem Heimatverzeichnis \(i.A. C:/USer/me....}{}% 13
+\BOOKMARK [1][-]{section.7}{Dokumentiere die effektiven Rechte f\374r den Benutzer Guest auf deinem Heimatverzeichnis.}{}% 14
+\BOOKMARK [1][-]{section.8}{Registry:}{}% 15
+\BOOKMARK [2][-]{subsection.8.1}{Starte den Registry-Editor mit regedit \(ggf. als Administrator\)}{section.8}% 16
+\BOOKMARK [2][-]{subsection.8.2}{Welche Rechte hast du auf den Teilbaum HKEY-Current-User und welche auf HKEY-Local-Machine?}{section.8}% 17
+\BOOKMARK [1][-]{section.9}{Wie hilft dieses System von Rechten und Berechtigungen die Systemsicherheit auf einem Windowsrechner zu gew\344hrleisten?}{}% 18
+\BOOKMARK [2][-]{subsection.9.1}{Was kann ein Trojaner oder eine Schadsoftware auf dem Rechner anstellen, wenn du als "normaler" Benutzer arbeitest?}{section.9}% 19
+\BOOKMARK [1][-]{section.10}{MS-Active Directory und MS-Dom\344ne \(Internetrecherche\):}{}% 20
+\BOOKMARK [2][-]{subsection.10.1}{Was passiert, wenn man einen Rechner in eine Domain h\344ngt?}{section.10}% 21
+\BOOKMARK [3][-]{subsubsection.10.1.1}{Warum ist das sinnvoll?}{subsection.10.1}% 22

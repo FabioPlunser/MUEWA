@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Startet die Benutzerverwaltung als Administrator.}{1}{section.1}%
+\contentsline {section}{\numberline {2}Welche Bentuzer gibt es auf Deinem Rechner?}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Welches Benutzerkonto verwendest du derzeit?}{2}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Dokumentiere die Eigenschaften deinens Benutzerkontos.}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Läuft dein Kennwort aus?}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Zu welchen Gruppen gehört das Konto?}{3}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Welche Gruppen gitb es auf Deinem Rechner?}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Beschreibe den Unterschied zwischen den Gruppen "Administratoren", und "Benutzer"}{4}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Dokumentiere die Berechtigung auf dem Ordner C:/Programme}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Welche Rechte besitzt die Gruppe der Administratoren, welche die der Benutzer?}{4}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Dokumentiere deine Erkenntnisse mit screenshot und beschreibe die Rechte mit Worten.}{4}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Warum funktioniert das nur mit einem NTFS-Dateisystem?}{5}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Beschreibe die Rechte auf deinem Heimatverzeichnis (i.A. C:/USer/me....}{6}{section.6}%
+\contentsline {section}{\numberline {7}Dokumentiere die effektiven Rechte für den Benutzer Guest auf deinem Heimatverzeichnis.}{6}{section.7}%
+\contentsline {section}{\numberline {8}Registry:}{7}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Starte den Registry-Editor mit regedit (ggf. als Administrator)}{7}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Welche Rechte hast du auf den Teilbaum HKEY-Current-User und welche auf HKEY-Local-Machine?}{7}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Wie hilft dieses System von Rechten und Berechtigungen die Systemsicherheit auf einem Windowsrechner zu gewährleisten?}{8}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Was kann ein Trojaner oder eine Schadsoftware auf dem Rechner anstellen, wenn du als "normaler" Benutzer arbeitest?}{8}{subsection.9.1}%
+\contentsline {section}{\numberline {10}MS-Active Directory und MS-Domäne (Internetrecherche):}{8}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Was passiert, wenn man einen Rechner in eine Domain hängt?}{8}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Warum ist das sinnvoll?}{8}{subsubsection.10.1.1}%
