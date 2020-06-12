@@ -1,0 +1,8 @@
+\BOOKMARK [1][-]{section.1}{Verwendet das netcat Programm }{}% 1
+\BOOKMARK [1][-]{section.2}{Programmiert einen Klientenprogrammcode, der abwechselnd eine Zeile vom Benutzer einliest, diese an den Server \(ncat mit Euren Antworten\) sendet und dann das Ergebnis vom Server abholt und wieder auf dem Bildschirm ausgibt.}{}% 2
+\BOOKMARK [1][-]{section.3}{Programmiert einen einfachen Server, de1r eine Verbindung entgegen nimmt und dann die erhaltenen Daten eures bereits geschriebenen Netzwerkklienten jeweils wieder zur\374ck sendet.}{}% 3
+\BOOKMARK [1][-]{section.4}{Baut den Code mit Hilfe von Threads in einen multithreaded Server um:}{}% 4
+\BOOKMARK [1][-]{section.5}{Baut den Code mit Hilfe von Threads in einen multithreaded Server um:}{}% 5
+\BOOKMARK [1][-]{section.6}{Lasst den Server mit mehreren Klienten laufen und dokumentiert das wiederum mit einem gro\337en personalisierten screenshot des Bildschirms.}{}% 6
+\BOOKMARK [1][-]{section.7}{Dokumentiert die aktiven Verbindungen und den listening-Socket mit dem netstat-Kommando des Betriebssystems.}{}% 7
+\BOOKMARK [1][-]{section.8}{Was ist unklar geblieben, wo braucht Ihr Hilfe?}{}% 8

@@ -1,0 +1,210 @@
+\documentclass{article}
+
+%\usepackage[utf8]{inputenc}%\usepackage{tikz}#
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{pgfplots} % Fuer Plots
+\usepackage{pgfplotstable}
+\usepackage{pgfkeys} 
+\usepackage{filecontents}
+\pgfplotsset{compat = newest}
+\usepackage{tikz} % Generell gutes Packet
+\usepackage{csvsimple} % Zum CSV auslesen
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{geometry}
+\geometry{left=20mm, right=20mm, bottom=20mm}
+
+
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\titleclass{\subsubsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsubsection}[subsubsubsection]
+\renewcommand\thesubsubsubsubsection{\thesubsubsubsection.\arabic{subsubsubsubsection}}
+\titleformat{\subsubsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@subsubsubsubsection{\@dottedtocline{5}{8em}{5em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\title{AAP12: Netzwerkprogrammierung mit python}
+\author{Fabio~Test\\Betreuer~:~Walter~Mueller}
+\date{\today}
+\rhead{4BHEL \hspace{5px}\includegraphics[scale=0.09]{Bilder/logo.png}}
+\lhead{AAP12: Netzwerkprogrammierung mit python}
+\rfoot{Page~\thepage ~of~\pageref{LastPage}}
+\lfoot{Gruppe~H}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+	\maketitle
+\end{titlepage}
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand\contentsname{Inhaltsverzeichnis}
+\tableofcontents	
+\pagenumbering{gobble}
+
+\thispagestyle{empty}
+\renewcommand\listfigurename{Abbildungsverzeichnis}
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+
+\pagebreak
+\section{Verwendet das netcat Programm }
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+1.	Verwendet das netcat Programm um auf eurem PC eine Client-Server Kommunikation zu testen.
+Mit dem ZIP-Passwort KSN entpacken, im Windows-Defender als ungefährlich markieren und das Löschen rückgängig machen.
+ncat ist in zwei cmd-Fenstern einmal als Client und einmal als Server zu starten.
+Wie kann das Programm als Server, wie als Klient verwendet werden? \\
+(dokumentiert eine personalisierte Kommunikation zw. Klient und Server mit screenshots)
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/CMD-ncat}
+	\caption{CMD-ncat}\end{figure}
+\end{figure}
+
+
+\section{Programmiert einen Klientenprogrammcode, der abwechselnd eine Zeile vom Benutzer einliest, diese an den Server (ncat mit Euren Antworten) sendet und dann das Ergebnis vom Server abholt und wieder auf dem Bildschirm ausgibt.}
+\begin{figure}[!h]
+	\centering	
+	\includegraphics[scale=0.4]{Bilder/client}
+	\caption{Client-Programm}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/client2}
+	\caption{Client-Programm-Ausgabe}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\pagebreak
+\section{Programmiert einen einfachen Server, de1r eine Verbindung entgegen nimmt und dann die erhaltenen Daten eures bereits geschriebenen Netzwerkklienten jeweils wieder zurück sendet.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/server}
+	\caption{Server-Programm und Ausgabe}
+\end{figure}
+
+Hallo du hurensohn
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagebreak	
+\section{Baut den Code mit Hilfe von Threads in einen multithreaded Server um:}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Was sind Threads?\\
+Ein Thread ist Teil eines Prozesses.\\
+Es wird zwischen zwei Arten von Threads unterschieden:
+Threads im engeren Sinne, die sogenannten Kernel-Threads, laufen ab unter Steuerung durch das Betriebssystem.\\
+Im Gegensatz dazu stehen die sogenannten User-Threads, die das Computerprogramm des Anwenders komplett selbst verwalten muss.\\\\
+
+Was ist dazu in Python notwendig?\\
+Thread "library"\\
+siehe Untenstehendes Programm\\\\
+
+Wann/Warum benötigt man einen multithreaded Server?\\
+Sobald man mehr wie einen User erwartet benötigt man einen multithreaded Server
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/multithread-server}
+	\caption{Multithreaded-Server-Programm}
+\end{figure}
+\section{Baut den Code mit Hilfe von Threads in einen multithreaded Server um:}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Ich habe für so ein einfaches Programm einfach Programmiert dass immer ein Thread hinzugefügt wird. Mir ist bewusst, dass noch eine Funktion fehlt, die nach Schließung eines Clients auch wieder diesen Thread schließt und den Port wieder freigibt. 
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\pagebreak
+\section{Lasst den Server mit mehreren Klienten laufen und dokumentiert das wiederum mit einem großen personalisierten screenshot des Bildschirms.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.4]{Bilder/multi-client}
+	\caption{Viele Clients auf einem Server}
+\end{figure}
+\section{Dokumentiert die aktiven Verbindungen und den listening-Socket mit dem netstat-Kommando des Betriebssystems.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.4]{Bilder/netstat}
+	\caption{Netstat}
+\end{figure}
+\section{Was ist unklar geblieben, wo braucht Ihr Hilfe?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Reicht es einfach eine Firewall Einstellung zu machen um innerhalb des Netzwerkes über Mehrere PCs miteinander zu kommunizieren? Und wenn dies dann reicht Port-Forwarding des Servers sodass alle mit meinem Code auf dem Server zugreifen können?
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\end{document}
