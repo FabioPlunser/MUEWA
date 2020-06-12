@@ -1,0 +1,373 @@
+\documentclass{article}
+
+%\usepackage[utf8]{inputenc}%\usepackage{tikz}#
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{pgfplots} % Fuer Plots
+\usepackage{pgfplotstable}
+\usepackage{pgfkeys} 
+\usepackage{filecontents}
+\pgfplotsset{compat = newest}
+\usepackage{tikz} % Generell gutes Packet
+\usepackage{csvsimple} % Zum CSV auslesen
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{geometry}
+\geometry{left=20mm, right=20mm, bottom=20mm}
+
+
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\titleclass{\subsubsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsubsection}[subsubsubsection]
+\renewcommand\thesubsubsubsubsection{\thesubsubsubsection.\arabic{subsubsubsubsection}}
+\titleformat{\subsubsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@subsubsubsubsection{\@dottedtocline{5}{8em}{5em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\title{AAB06: LinuxUserRechte}
+\author{Fabio~Plunser\\Betreuer~:~Walter~Mueller}
+\date{\today}
+\rhead{4BHEL \hspace{5px}\includegraphics[scale=0.09]{Bilder/logo.png}}
+\lhead{AAB06: LinuxUserRechte}
+\rfoot{Page~\thepage ~of~\pageref{LastPage}}
+\lfoot{Gruppe~H}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+	\maketitle
+\end{titlepage}
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand\contentsname{Inhaltsverzeichnis}
+\tableofcontents	
+\pagenumbering{gobble}
+
+\thispagestyle{empty}
+\renewcommand\listfigurename{Abbildungsverzeichnis}
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+
+\pagebreak
+\section{Arbeite mit Eurem Ubuntu Mint in der VMWare weiter.}
+\section{Startet den virutellen Rechner, meldet Euch an und startet dort ein Terminalfesnter.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Gebt dort das Kommando $sudo --shell$ ein. Ihr bekommt einen Promt (=Eingabeaufforderung) mit einem $\# \rightarrow$ Ihr habt nun root-(=Administrator) Rechte. (screenshot)
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/sudo--shell}
+	\caption{Root-Rechte}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Gebt mit cat /etc/passwd die Benutzerdatenbank aus. Was erkennt ihr?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/cat-etc-passwd}
+	\caption{User-Datenbank}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Legt einen weiteren Benutzer mit eurem Vornamen an:}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+useradd --create-home --comment 'dein Name' --shell /bin/bash walter\\
+(screenshot)
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/useradd}
+	\caption{User-hinzufügen}
+\end{figure}
+\subsection{Wie bekommst Du Hilfe zum useradd-Kommando?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+useradd -h
+\end{tcolorbox}
+\subsection{Was versteht man unter Optionen eines Kommandos?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+alle --"befehle"
+\end{tcolorbox}
+
+
+\section{Vergebt für den Nutzer ein Passwort:}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+passwd walter
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{Bilder/passwd-walter}
+	\caption{User-hinzufügen-passwort}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Zeigt die entsprechenden Teile der Benutzerdatenbank an.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Erklärung: grep durchsucht Textdateien nach Zeichenketten.\\
+grep walter /etc/passwd  /etc/shadow\\
+(screenshot)
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/grep walter}
+	\caption{Grep-Walter}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Walter hat UID: 1004 und GID: 1004. \\
+Da ich vorher schon einen User erstellt habe aber nicht nach Vorgabe. Diesen habe ich wieder gelöscht daher besitzt dieser User nicht wie üblich die IDs 1001 sondern 1004. Warum es nicht 1002 oder 1003 ist kann mir nicht erklären.
+\end{tcolorbox}
+\subsection{Recherchiert im Internet was ein HASH-Wert ist und was das mit der Datei /etc/shadow zu tun hat.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/Hash}
+	\caption{Shadow-Hash}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Die Hash ist eine Einwegfunktion die aus dem normalen Passwort Text, eine Lange Zahl erstellt. Diese Zahl wird jedes mal beim einloggen neu berechnet. Vor der Hash Zahl gibt es eine Zufallszahl für Sicherheit und um Benutzer mit dem gleichen Passwort zu unterscheiden.
+\end{tcolorbox}
+\pagebreak
+\subsection{Shadowfile-Erklärung}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/hash-erklaerung}
+	\caption{Shadow-File-Erklärung}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Quelle: https://www.cyberciti.biz/faq/understanding-etcshadow-file/
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Meldet Euch vom PC aus erneut mit putty (IP Adresse im VMWare-Fenster mit ip addr show ermitteln) aber dieses Mal als Benutzer walter an!}
+\subsection{Könnt ihr als walter auch root werden?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Es muss dafür mit: \\
+apt-get install openssh-server ssh installiert werden.\\
+um ssh zu aktivieren: systemctl restart ssh.
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{Bilder/ssh-connection}
+	\caption{SSH-Verbindung}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Gebt dem neuen Benutzer zusätzliche Rechte in dem ihr den account zur sudo Gruppe hinzugefügt. Das müsst Ihr natürlich im root Fenster machen!}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/less-etc-group}
+	\caption{Sudo-Benutzer}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+mit less /etc/group: walter ist noch nicht in der sudo Gruppe
+\end{tcolorbox}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+mit: usermod --groups sudo walter zu sudo gruppe hinzufügen
+\end{tcolorbox}
+
+\subsection{Prüft das, indem Ihr den Benutzer walter mit grep in der Gruppendatei /etc/group sucht.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/groups}
+	\caption{Sudo-Benutzer}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagebreak
+\section{Meldet euch erneut mit putty am Server als walter an und prüft mit dem Kommando groups, zu welchen Gruppen Ihr nun gehört.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/ssh-groups}
+	\caption{SSH-Groups}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Gruppe: walter und Gruppe: Sudo
+\end{tcolorbox}
+
+\subsection{Könnt ihr nun als walter mit sudo root werden?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Ja
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/ssh-root}
+	\caption{SSH-Root}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagebreak
+\section{Gebt mit ls -ld/tmp /bin die Rechte auf den Verzeichnissen /tmp und bin aus.}
+\subsection{Interpretiert die Ausgabe und vergleicht diese mit der Ausgabe des grafischen Dateiexplorers im Tab Permissions}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/lsld}
+	\caption{ls-ld/temp /bin}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+drwxr -xr -x: \\
+dr = directory $\rightarrow$ zeigt dass ein Ordner ist\\
+wxr = write, execution/changedir, read für Besitzer der Datei\\
+-xr = User in der Gruppe root dürfen executen/changedir und lesen\\
+-x = execution/changedir für alle User die nicht in der root Gruppe sind\\
+3 Blöcke rwx für Besitzer der Datei, für alle in der Gruppe root, für den Rest\\\\
+
+drwxrwxrwt: 3er Blöcke wxr wxr wt
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Legt als Benutzer walter mit mkdir ein Verzeichnis unter /tmp an und überprüft die Eigenschaften dieses Verzeichnisses.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/ssh-mkdir}
+	\caption{SSH-mkdir}
+\end{figure}
+\subsection{Legt im Verzeichnis die Datei an:}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+echo "Hallo walter" $> /tmp/xxx/WalterDatei$
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/ssh-verzeichniss}
+	\caption{SSH-echo "Hallo Walter"}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Könnt ihr die Datei im grafischen explorer öffnen, könnt ihr dies ändern/überschreiben?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/grafisch}
+	\caption{Erstellte-Datie}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Wie es auf dem Bild zu erkennen ist, darf jeder andere Benutzer die Datei zwar lesen aber nicht verändern. Nur Root und Benutzer Walter dürfen die Datei ändern und User mit sudo rechten in der cmd line.
+\end{tcolorbox}
+\section{Ändert als walter (in putty) die Rechte des Verzeichnisses mit}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+chmod 770 /temp/xxx bzw chmod o-rwx /tmp/xxx
+\end{tcolorbox}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/ssh-chmod770}
+	\caption{SSH-chmod 770}
+\end{figure}
+\subsection{Wie wirkt sich das auf die Sichtbarkeit im explorer aus?}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/chmod770}
+	\caption{Chmod 770}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Ich darf nicht mehr auf den Ordner zugreifen bzw, ich darf nicht mehr sehen was im Ordner drinnen ist.
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#############################################################################################################%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\section{Gebt den ursprünglichen Benutzer eures Linux-Rechners zusätzlich die Gruppe walter.}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/walter-gruppe}
+	\caption{Gruppe-Walter}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{Bilder/grep-walter-fabio}
+	\caption{Gruppe-Walter}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Benutzer Fabio ist jetzt in der Gruppe Walter.
+\end{tcolorbox}
+\subsection{Meldet Euch mit "Logout" ab und erneut an.}
+\subsection{Was bewirkt das und was gilt nun für die Zugriffsrechte des ursprünglichen Nutzers?}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Ich darf wieder die Datei anschauen und habe keine Einschränkungen auf die erstellte Datei.
+\end{tcolorbox}
+\end{document}
