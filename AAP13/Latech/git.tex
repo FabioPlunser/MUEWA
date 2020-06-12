@@ -1,0 +1,264 @@
+\documentclass{article}
+
+
+
+%\usepackage[utf8]{inputenc}%\usepackage{tikz}#
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{pgfplots} % Fuer Plots
+\usepackage{pgfplotstable}
+\usepackage{pgfkeys} 
+\usepackage{filecontents}
+\pgfplotsset{compat = newest}
+\usepackage{tikz} % Generell gutes Packet
+\usepackage{csvsimple} % Zum CSV auslesen
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{geometry}
+\geometry{left=20mm, right=20mm, bottom=20mm}
+
+\graphicspath{{Bilder}}
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\titleclass{\subsubsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsubsection}[subsubsubsection]
+\renewcommand\thesubsubsubsubsection{\thesubsubsubsection.\arabic{subsubsubsubsection}}
+\titleformat{\subsubsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%p
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@subsubsubsubsection{\@dottedtocline{5}{8em}{5em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\title{AAP13: GIT}
+\author{Fabio~Plunser\\Betreuer~:~Walter~Mueller}
+\date{\today}
+\rhead{4BHEL \hspace{5px}\includegraphics[scale=0.09]{Bilder/logo.png}}
+\lhead{AAP13: GIT}
+\rfoot{Page~\thepage ~of~\pageref{LastPage}}
+\lfoot{Gruppe~H}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+	\maketitle
+\end{titlepage}
+
+\pagebreak
+\thispagestyle{empty}
+\renewcommand\contentsname{Inhaltsverzeichnis}
+\tableofcontents	
+\pagenumbering{gobble}
+
+\thispagestyle{empty}
+\renewcommand\listfigurename{Abbildungsverzeichnis}
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+
+
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+\newpage
+\section{Verwendet PyCharm und klont mit dem integrierten GIT Tools ein Projekt von GitHUB}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+\href{https://github.com/mue-htl/4bhel-aap13}{Github-Repo}\\
+
+Last das Programm laufen, schaut Euch die Git-Historie an. 
+Macht und commitet Änderungen in Eurem lokalen Repo. \\\\
+
+Mit der Extension git-history für Visual Studio Code kann genau nachgeschaut werden wer, wann, was geändert hat.\\
+Wenn viele Personen an einem Projekt arbeiten ist das wirklich unglaublich nützlich. 
+\end{tcolorbox}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.3]{Bilder/git-history}
+  \caption{MUE-History on Git}
+\end{figure}
+
+
+\newpage
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Legt einen eigenen Benutzer bei GitHub an. Legt im neuen Account auch eine Testrepository an.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+(dokumentiert hier Eure Benutzerkennung sowei die URL Euros Repositories bei GitHub und macht einen screenshot Eurer Github-Webseite)
+\\
+\href{https://github.com/FabioPlunser/FSST4BHEL}{https://github.com/FabioPlunser/FSST4BHEL}
+\end{tcolorbox}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.6]{Bilder/Gtihub-screen}
+  \caption{Github Seite}
+\end{figure}
+
+
+
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+\newpage
+\section{Erzeugt mit clone eine Kopie Eures GitHub Repos in Eurer PyCharm Umgebung.}
+\subsection{Erstellt in der Umgebung im Projekt weitere Dateien wie z.B. ein perosnalisiertes HelloWorld.py.}
+\subsection{Commitet Euro Änderung in Euer lokales Repo}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Vorsicht: Beachtet dabei Eure Privacy  - ihr werdet das Projekt ja bei GitHub publizieren.\\
+
+In meinem Fall wird Visual Studio Code verwendet mit der GIT-History extension.\\
+Man sieht zwar nicht direkt die DateiSturktur es reicht aber vollkommen aus, auch wenn man die Commands 
+weiß benötigt man nur die weboberfläche.
+\end{tcolorbox}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.35]{Bilder/meigit-lokal}
+  \caption{MeinGit-History}
+\end{figure}
+
+
+
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Pusht Eure Projektänderungen nach GitHub}
+(screenshots der Webansicht Eures Projekts)
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.4]{Bilder/git-push}
+  \caption{History änderung nach Git push}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.6]{Bilder/github-push}
+  \caption{Github Seite nach Push}
+\end{figure}
+
+
+
+
+
+\newpage
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Findet einen Partner in der Klasse und berechtigt Euch wechselseitig für Eure Git-Hub-Projekte.}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+Partner Mitterhuber Lorenz\\
+Habe noch nicht ganz verstanden wich ich einstellen kann was der Lorenz machen darf und was nicht bzw. 
+habe es nirgends gefunden
+\end{tcolorbox}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.4]{Bilder/github-berechtigung}
+  \caption{Github-Berechtigung}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.4]{Bilder/lorenz-git}
+  \caption{Git-Page vom Lorenz}
+\end{figure}
+
+
+
+\newpage
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Klont das Repo Eures Partners in ein neues lokales PyChram-Projekt auf Eurem PC. Bringt dort zuerst lokal und dann auch im Remote-Repo
+bei GitHub Eure Änderungen ein.}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.6]{Bilder/copy-git-lorenz}
+  \caption{Kopie von Repo von Lorenz}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.6]{Bilder/git-lorenz-push}
+  \caption{Meine Änderungen}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.6]{Bilder/github-lorenz-push}
+  \caption{Änderung auf Github vom Lorenz}
+\end{figure}
+\begin{tcolorbox}[notitle,boxrule=0pt,colback=gray!20]
+In der File History kann genau nachgeschaut werden, wer, wann was geändert hat
+\end{tcolorbox}
+
+
+
+
+
+
+
+
+
+\newpage
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+%#-----------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Was ist unklar geblieben, wo braucht ihr Hilfe?}
+Was meinen sie mit der Benutzerkennung?\\ 
+Wie kann man die Berechtigungen genauer bestimmen habe das nicht rausgefunden.
+\end{document}
+

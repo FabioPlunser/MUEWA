@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Verwendet PyCharm und klont mit dem integrierten GIT Tools ein Projekt von GitHUB}{1}{section.1}%
+\contentsline {section}{\numberline {2}Legt einen eigenen Benutzer bei GitHub an. Legt im neuen Account auch eine Testrepository an.}{2}{section.2}%
+\contentsline {section}{\numberline {3}Erzeugt mit clone eine Kopie Eures GitHub Repos in Eurer PyCharm Umgebung.}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Erstellt in der Umgebung im Projekt weitere Dateien wie z.B. ein perosnalisiertes HelloWorld.py.}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Commitet Euro Änderung in Euer lokales Repo}{3}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Pusht Eure Projektänderungen nach GitHub}{3}{section.4}%
+\contentsline {section}{\numberline {5}Findet einen Partner in der Klasse und berechtigt Euch wechselseitig für Eure Git-Hub-Projekte.}{4}{section.5}%
+\contentsline {section}{\numberline {6}Klont das Repo Eures Partners in ein neues lokales PyChram-Projekt auf Eurem PC. Bringt dort zuerst lokal und dann auch im Remote-Repo bei GitHub Eure Änderungen ein.}{5}{section.6}%
+\contentsline {section}{\numberline {7}Was ist unklar geblieben, wo braucht ihr Hilfe?}{6}{section.7}%
