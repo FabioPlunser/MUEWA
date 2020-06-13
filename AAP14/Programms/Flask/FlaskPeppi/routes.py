@@ -1,4 +1,9 @@
-from Models import User, Post
+from flask import Flask, render_template, url_for, flash, redirect
+from FlaskPeppi import app
+from FlaskPeppi.forms import RegistrationForm, LoginForm
+from FlaskPeppi.models import User, Post
+
+
 
 posts = [
     {
