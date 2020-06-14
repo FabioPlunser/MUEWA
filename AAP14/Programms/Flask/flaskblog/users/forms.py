@@ -72,3 +72,9 @@ class ResetPasswordForm(FlaskForm):
     confirm_password = PasswordField('Confirm Password',
                                      validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
+
+class ChatForm(FlaskForm):
+    """Accepts a nickname and a room."""
+    name = StringField('Name', validators=[DataRequired()])
+    room = StringField('Room', validators=[DataRequired()])
+    submit = SubmitField('Enter Chatroom')

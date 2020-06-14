@@ -3,10 +3,10 @@ from flask_login import login_user, current_user, logout_user, login_required
 from flaskblog import db, bcrypt
 from flaskblog.models import User, Post
 from flaskblog.users.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
-                                   RequestResetForm, ResetPasswordForm)
+                                   RequestResetForm, ResetPasswordForm, ChatForm)
 from flaskblog.users.utils import save_picture, send_reset_email
+from . import users
 
-users = Blueprint('users', __name__)
 
 
 @users.route("/register", methods=['GET', 'POST'])
@@ -108,6 +108,21 @@ def reset_token(token):
     return render_template('reset_token.html', title='Reset Password', form=form)
 
 
+@users.route('/index', methods=['GET', 'POST'])
+@login_required
+def index():
+    """Login form to enter a room."""
+    form = ChatForm()
+    if form.validate_on_submit():
+        session['name'] = form.name.data
+        session['room'] = form.room.data
+        return redirect(url_for('users.chat'))
+    elif request.method == 'GET':
+        form.name.data = session.get('name', '')
+        form.room.data = session.get('room', '')
+    return render_template('index.html', form=form)
+
+
 @users.route('/chat')
 @login_required
 def chat():
@@ -116,5 +131,5 @@ def chat():
     name = session.get('name', '')
     room = session.get('room', '')
     if name == '' or room == '':
-        return redirect(url_for('.index'))
+        return redirect(url_for('users.index'))
     return render_template('chat.html', name=name, room=room)
