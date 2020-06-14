@@ -86,7 +86,7 @@ def save_picture(form_picture):
     i = Image.open(form_picture)
     i.thumbnail(output_size)
     i.save(picture_path)
-    
+
     return picture_fn
 
 
@@ -98,7 +98,6 @@ def account():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
             current_user.image_file = picture_file
-
 
         current_user.username = form.username.data
         current_user.email = form.email.data
@@ -112,3 +111,9 @@ def account():
     return render_template(
         "account.html", title="Account", image_file=image_file, form=form
     )
+
+
+@app.route("/post/new")
+@login_required
+def new_post():
+    return render_template("create_post.html", title="New Post")
