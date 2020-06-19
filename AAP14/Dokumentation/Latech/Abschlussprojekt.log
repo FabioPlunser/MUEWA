@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.17)  17 JUN 2020 14:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.17)  17 JUN 2020 14:31
 entering extended mode
 **"c:/Users/autoa/Google Drive/Schule/2019_20/FSST/MÜWA/Aufträge/MUEWA/AAP14/Dokumentation/Latech/Abschlussprojekt.tex"
 ("c:/Users/autoa/Google Drive/Schule/2019_20/FSST/MÜWA/Aufträge/MUEWA/AAP14/Dokumentation/Latech/Abschlussprojekt.tex"
@@ -572,7 +572,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count305
 \l__pdf_internal_box=\box70
-) ("c:/Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.aux" ("c:/Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Sections/flask.tex.aux"))
+) ("c:/Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.aux")
 \openout1 = `Abschlussprojekt.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
@@ -713,33 +713,40 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
 <to be read again> 
                    \relax 
 l.102 \pagenumbering
-                    {arabic} [1]
-\openout2 = `Sections/flask.tex.aux'.
-
-
-No file Sections/flask.tex.tex.
-
+                    {arabic} [1] ("c:/Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Sections/flask.tex") 
 AED: lastpage setting LastPage
+<Bilder/logo.png, id=23, 991.7853pt x 174.6525pt>
+File: Bilder/logo.png Graphic file (type png)
+<use Bilder/logo.png>
+Package pdftex.def Info: Bilder/logo.png  used on input line 115.
+(pdftex.def)             Requested size: 89.25682pt x 15.71803pt.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+Make it at least 19.31807pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[1 <c:/Users/autoa/Google Drive/Schule/2019_20/FSST/MÜWA/Aufträge/MUEWA/AAP14/Dokumentation/Latech/Bilder/logo.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
-("c:/Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.aux" ("c:/Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Sections/flask.tex.aux"))
+ ("c:/Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
 Package rerunfilecheck Info: File `Abschlussprojekt.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 7EEA991F6D6E8C11DBF3747699FA0A45;40.
  ) 
 Here is how much of TeX's memory you used:
- 31361 strings out of 480797
- 772317 string characters out of 2895575
- 1113836 words of memory out of 3000000
- 46817 multiletter control sequences out of 15000+200000
- 555163 words of font info for 38 fonts, out of 3000000 for 9000
+ 31406 strings out of 480797
+ 773011 string characters out of 2895575
+ 1114198 words of memory out of 3000000
+ 46858 multiletter control sequences out of 15000+200000
+ 558109 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,6n,136p,902b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb>
-Output written on "c:/Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.pdf" (2 pages, 74753 bytes).
+ 79i,16n,136p,902b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/autoa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb>
+Output written on "c:/Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.pdf" (3 pages, 190369 bytes).
 PDF statistics:
- 30 PDF objects out of 1000 (max. 8388607)
- 2 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 52 PDF objects out of 1000 (max. 8388607)
+ 4 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
