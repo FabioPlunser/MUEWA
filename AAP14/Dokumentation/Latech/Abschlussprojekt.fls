@@ -321,12 +321,21 @@ INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmbx12.tfm
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.toc
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.toc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmbx10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmr7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmr5.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\lmmi10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\lmmi7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\lmmi5.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\lmsy10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\lmsy7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\lmsy5.tfm
 OUTPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.toc
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.lof
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.lof
 OUTPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.lof
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Sections\flask.tex
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Sections\flask.tex
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmbx12.tfm
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Bilder\logo.png
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Bilder\logo.png
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Bilder\logo.png
@@ -335,11 +344,14 @@ INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP1
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.aux
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.out
 INPUT c:\Users\autoa\Google Drive\Schule\2019_20\FSST\MÜWA\Aufträge\MUEWA\AAP14\Dokumentation\Latech\Abschlussprojekt.out
+INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-rm.enc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx12.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx12.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmmi10.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr12.pfb
